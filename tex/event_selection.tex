@@ -1,6 +1,63 @@
 \chapter{Event Selection}
-\begin{section}{Section Title}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\begin{section}{Baseline selection}
+
+One of the main challenges for a SUSY search is that the ratio of SM events to SUSY events is (ROUGHLY) 10 billion to 1.
+To surmount this problem, it is paramount to develop highly efficient signal-to-background discriminators.
+Luckilly, SUSY signatures typically have characteristics unlike most SM processes.
+In particular, for the T1tbs process, events are expected to have a large number of jets, many of which are b-quark jets, resulting in large amount of hadronic energy.
+Additionally, the mass scale of the event is expected to be larger than most SM events due to the high masses of the gluinos (i.e. \~1~\TeV).
+These features are used to construct the ``baseline selection'', defined as a set of requirements that events must pass in order to be included in the analysis.
+Here the baseline selection is defined as $\Nleps=1$, $\MJ>500~\GeV$, $\HT>1200~\GeV$, $\Njets\geq4$, and $\Nb\geq1$.
+Figure~\ref{nminus1} shows the ``N-1'' distributions of these variables, which are plots showing the 1D distribution of a variable with the baseline selection applied, except for the requirement corresponding to the plotted variable.
+Figure~\ref{cutflow} shows a ``cutflow'' table, which depicts the expected yields for each process as each requirement of the baseline selection is indiviually applied.
+Note that this analysis explicitly requires exactly 1 lepton (defined as a muon or electron).
+As can be seen in 0-lepton bin of the N-1 plot of \Nleps, there is still significant amounts of QCD production compared to the expected signal yield.
+Requiring exactly 1 lepton reduces the background by XX\%, while only reducing the signal by YY\% compared to being inclusive in \Nleps.
+An additional benefit of this selection is that the SM backround is dominated by a single process (\ttbar), which reduces the complexity of the background prediction.
+Including additional \Nleps regions is being investigated for future iterations of the analysis.
+A final note of interest is that there is no requirement on the \MET, making this analysis sensitive to BSM models other than RPV SUSY that produce either little or no \MET in an event.
+
+A final requirement for the baseline selection is that events must pass a series of filters designed to remvoe poorly reconstructed events. These standard filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good primary vertices.
+
+\end{section}
+
+\begin{section}{Trigger}
+% Story doesn't flow well. Information is out of order.
+In order to select events in data that pass the baseline selection, events are required to either have an online-\HT of at least 900 \GeV or at least one jet with online-\pT above 450~\GeV.
+Figure~\ref{trigger} shows the performance of the trigger during the first XX~\ifb (Runs B-G) and the remaining YY~\ifb (Run H).
+During Runs B-G the trigger plateaus at YYYY~\GeV with 100\% efficiency, during Run H, however, a bug in the trigger implementation caused very high-\pT jets to not be included in the online-\HT calculation, which resulted in a significantly plateau efficiency of YY\%.
+In order to recover the lost efficiency, a trigger requiring at least one jet with online-\pT above 450~\GeV is ``OR'''d with the \HT trigger
+With this addition, the trigger effieciencies for background and signal are >99\% for events with \HT>1200~\GeV, as shown in Figure~\ref{ORtriggers}.
+
+\end{section}
+
+\begin{section}{Analysis Binning}
+After the baseline selection, the background is dominated by \ttbar events with small contributions from \Wjets and QCD production.
+There are additional rare background processes, jointly noted as ``Other'', with tiny, but non-zero contributions that arise from single top quark, \ttW, \ttZ, \ttH, \tttt, and Drell-Yan production.
+
+In order to further increase the signal-to-background ratio, as well as create background-dominated control regions, the analysis region is binned with respect to \Njets and \MJ. 
+The \Njets bins are defined as $4 \leq \Njets \leq 5$, $6 \leq \Njets \leq 7$, and $\Njets \geq 8$.
+Each \Njets bin is further split into bins of $500 < \MJ \leq 800~\GeV$, $800 < \MJ \leq 1000~\GeV$, and $\MJ > 1000~\GeV$, with the exception of the $4 \leq \Njets \leq 5$ bin for which the two highest \MJ bins are combined due to the limited data sample size in the $\MJ \geq 1000~\GeV$ bin.
+A diagram representing this binning is shown in Figure~\ref{fig:analysis_regions}
+The low-\Njets, low-\MJ bins are expected to be background-dominated and are used as control regions for constraining sytematics and for validating the prediction methodology, while the high-\Njets, high-\MJ bins.
+
+\begin{figure}[tbp!]
+\centering
+  \begin{tabular}{ |c|c|c|c| }
+    \hline
+%    \multirow{2}{*}{\MJ [\GeV]} & \multicolumn{3}{c|}{\Njets} \\ \cline{2-4}
+%                                         & 4--5                & 6--7  & $\geq$8   \\ \hline
+%    500--800                             & CR                  & CR    & SR        \\ \hline
+%    800--1000                            & \multirow{2}{*}{CR} & SR    & SR        \\ \cline{1-1} \cline{3-4}
+%    $>$1000                              &                     & SR    & SR        \\ \hline
+  \end{tabular}
+  \caption{\label{fig:analysis_regions} Illustration depicting the (\Njets, \MJ) binning after the baseline selection, with control and signal region bins denoted by ``CR'' and ``SR'', respectively.}
+\end{figure}
+
+Within each \Njets and \MJ bins, the \Nb distribution is examined for evidence of new physics and is separated into bins of $\Nb=1$, 2, 3, and $\geq 4$.
+The two lowest \Nb bins are used to provide constraints on the background normalizations and systematic uncertainites, while the higher \Nb bins are the most sensitive to potential signals due to its larger signal-to-background ratios.
+
+In total, this analysis has 8 kinematic regions--3 control and 5 signal regions with four \Nb bins per kinematic region.
 
 \end{section}
