@@ -1,6 +1,33 @@
 \chapter{Particle Reconstruction and Identification}
-\begin{section}{Section Title}
+\begin{section}{Tracks}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Track reconstruction with the CMS detector faces many challenges, as at each bunch crossing $\sim O(10^3)$ particles are expected to pass through the CMS tracking system, all of which must be reconstructed in time to be inputted to the HLT.
+This constraint makes it immensely challenging to attain high track-finding efficiency, while minimzing the number of fake tracks.
+
+The first step of track reconstruction is to reconsutrct ``hits'' in a process called ``local reconstruction''.
+In this step, signals in both the pixel and strip channels that are above some zero-suppression threshold are clustered together into hits, where the cluster positions and uncertainties are then estimated.
+
+Next, track are reconstructed from these hits in order to provide estimates for the momentum and position of charged particles associated with the track.
+This is done using specialized software based off of Kalman filters known as Combinatorial Track Finder (CTF).
+In order to reduce the combinatorial complexity of the problem, the CTF track reconstruction is peformed six times. 
+Each iteration attempts to reconstruct the most easily-identifiable tracks, e.g. high-\pT tracks, and then removes the hits associated with those tracks.
+This helps simplify the track reconstruction in the following iterations.
+
+Each iteration consists of four steps:
+\begin{enumerate}
+\item A seed is generated from a few (generally 2 or 3) hits. 
+This seed provides an initial estimate of the trajectory and uncertainties associated with thet track.
+\item A Kalman-based track finder is used to extrapolate seed trajectories along their expected paths. Additional hits that are compatabile with a path are assigned to that track candidate.
+\item A track-fitting module uses a Kalaman filter and smoother to provide estimates of the trajectory parameters for each track.
+\item A track selection sets quality thresholds and discards tracks that fail the specified criteria.
+\end{enumerate}
+
+A detailed description of track reconstruction can be found in Reference~\cite{Chatrchyan:2014fea}.
+
+\begin{subsection}{Vertices}
+
+primary vertices are cool.
+
+\end{subsection}
 
 \end{section}
