@@ -8,7 +8,7 @@ Luckilly, SUSY signatures typically have characteristics unlike most SM processe
 In particular, for the T1tbs process, events are expected to have a large number of jets, many of which are b-quark jets, resulting in large amount of hadronic energy.
 Additionally, the mass scale of the event is expected to be larger than most SM events due to the high masses of the gluinos (i.e. \~1~\TeV).
 These features are used to construct the ``baseline selection'', defined as a set of requirements that events must pass in order to be included in the analysis.
-Here the baseline selection is defined as $\Nleps=1$, $\MJ>500~\GeV$, $\HT>1200~\GeV$, $\Njets\geq4$, and $\Nb\geq1$.
+Here the baseline selection is defined as $\Nleps = 1$, $\HT > 1200~\GeV$, $\MJ > 500~\GeV$, $\Njets \geq 4$, and $\Nb \geq 1$.
 Figure~\ref{nminus1} shows the ``N-1'' distributions of these variables, which are plots showing the 1D distribution of a variable with the baseline selection applied, except for the requirement corresponding to the plotted variable.
 Figure~\ref{cutflow} shows a ``cutflow'' table, which depicts the expected yields for each process as each requirement of the baseline selection is indiviually applied.
 Note that this analysis explicitly requires exactly 1 lepton (defined as a muon or electron).
@@ -18,17 +18,64 @@ An additional benefit of this selection is that the SM backround is dominated by
 Including additional \Nleps regions is being investigated for future iterations of the analysis.
 A final note of interest is that there is no requirement on the \MET, making this analysis sensitive to BSM models other than RPV SUSY that produce either little or no \MET in an event.
 
-A final requirement for the baseline selection is that events must pass a series of filters designed to remvoe poorly reconstructed events. These standard filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good primary vertices.
+A final requirement for the baseline selection is that events must pass a series of filters designed to remvoe poorly reconstructed events. These standard filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good PVs.
 
 \end{section}
 
-\begin{section}{Trigger}
-% Story doesn't flow well. Information is out of order.
-In order to select events in data that pass the baseline selection, events are required to either have an online-\HT of at least 900 \GeV or at least one jet with online-\pT above 450~\GeV.
-Figure~\ref{trigger} shows the performance of the trigger during the first XX~\ifb (Runs B-G) and the remaining YY~\ifb (Run H).
-During Runs B-G the trigger plateaus at YYYY~\GeV with 100\% efficiency, during Run H, however, a bug in the trigger implementation caused very high-\pT jets to not be included in the online-\HT calculation, which resulted in a significantly plateau efficiency of YY\%.
-In order to recover the lost efficiency, a trigger requiring at least one jet with online-\pT above 450~\GeV is ``OR'''d with the \HT trigger
-With this addition, the trigger effieciencies for background and signal are >99\% for events with \HT>1200~\GeV, as shown in Figure~\ref{ORtriggers}.
+\begin{section}{Trigger Efficiency}
+The data sample used in this analysis is obtained by selecting events that pass a loose HLT selection.
+In order to avoid biasing the selected sample, the HLT requirements must be significatly loose enough that the selection efficiency is as high as possible and independent of any kinematic properties.
+In particular, events must pass an \texttt{OR} of the \trigHT trigger, which requires an online-\HT of at least 900~\GeV and the \trigJet trigger, which at least one jet with online-\pT above 450~\GeV.
+
+Figure~\ref{fig:ht_trigger} shows the performance of the \trigHT trigger as a function of \HT during the first 27.3~\ifb (Runs B-G, top-left), last 8.7~\ifb (Run H, top-right), and full dataset (Runs B-H, bottom).
+The trigger performances are measured in a data sample collected using the \trigEle trigger and offline requirements of at least one electron and at least 4 jets.
+While the trigger efficiency for Runs B-G is 100\% after the trigger plateau of roughly $\HT = 1000~GeV$, the trigger efficiency only performs with 80\% efficiency in Run H.
+This inefficiency was caused by an issue with an updated trigger implementation that erroneously excluded high \pT jets from the online-\HT calculation.
+This effect corresponds to an overall trigger efficency of 95\%, corresponding to a loss of about 2~\ifb of data.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_runsbg.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_runh.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_runsbh.pdf}
+\caption{Trigger efficiency for \trigHT as a function of \HT in Runs B-G (top-left), Run H (top-right), and full dataset (bottom). 
+The efficiences are measured using a data sample collected with the \trigEle trigger and an offline requiement of at least one electron and at least four jets.}
+\label{fig:ht_trigger}
+\end{figure}
+
+In order to recover this inefficency, events passing the \trigJet trigger are included in the collected data sample.
+To pass this trigger, events must have very high \pT jets, i.e. $\gtrsim 450~\GeV$, which provides complementary efficiency where the \trigHT trigger is inefficienct.
+Figure~\ref{fig:ht_jet_trigger} shows the performance as a function of \HT of the \trigJet trigger in Runs B-H (top-left) and the combination of the \trigHT and \trigJet in Run H (middle) and in the full dataset (bottom), measured with a dataset collected with \trigEle and offline requirements of at least one electron and at least 4 jets.
+The inclusion of the \trigJet trigger restores the overall trigger efficency to essentially 100\% in both Run H and the entire dataset.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_jet_runsbh.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_jet_runh.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_jet_runsbh.pdf}
+\caption{Trigger efficiency as a function of \HT for \trigJet in the full dataset (top-left) and for the combination of \trigHT and \trigJet in Run H (top-right) and the full dataset (bottom).
+The efficiences are measured using a data sample collected with the \trigEle trigger and an offline requiement of at least one electron and at least four jets.}
+\label{fig:ht_jet_trigger}
+\end{figure}
+
+This trigger efficiency, however, does not necessarilly correspond to the efficiency for signal events.
+A lower bound on the signal efficiency can be estimated by considering that the \trigJet trigger is fully efficient for jets with $\pT > 500~\GeV$ and 80\%-95\% of simulated signal events (depending on the mass of the gluino) have a jet with $pT > 500~\GeV$.
+Thus, in the worst case scenario, the addition of the \trigJet trigger is still expected to recover at least 85\% of the lost signal efficiency in Run H.
+This results in an efficiency of at least 97\% in Run H and over 99\% for the full dataset for signal events.
+
+Lastly, to ensure that there is no kinematic bias in the trigger efficiency either inherently or residually from effects of the online-\HT calculation issue, the trigger efficency is measured as a function of \MJ, \Njets, and \Nb.
+The measurements, shown in Figure~\ref{fig:kinvars_trigger} are done in a data sample collected with the \trigEle trigger and an offline requirement of at least one electron, at least four jets, and \baseHT.
+The resulting efficiencies are all consistent with 100\% and no kinematic bias is observed.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_jet_mj_runsbh.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_jet_njets_runsbh.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/trig_ht_jet_nb_runsbh.pdf}
+\caption{Trigger efficiency as a function of \MJ (top-left), \Njets (top-right), and \Nb (bottom) for the combination of the \trigHT and \trigJet triggers in the full dataset.
+The efficiencies are measured using a data sample collected using the \trigEle trigger and an offline requirement of at least one electron, at least four jets, and \baseHT.}
+\label{fig:kinvars_trigger}
+\end{figure}
 
 \end{section}
 
@@ -44,20 +91,24 @@ The low-\Njets, low-\MJ bins are expected to be background-dominated and are use
 
 \begin{figure}[tbp!]
 \centering
-  \begin{tabular}{ |c|c|c|c| }
-    \hline
-%    \multirow{2}{*}{\MJ [\GeV]} & \multicolumn{3}{c|}{\Njets} \\ \cline{2-4}
-%                                         & 4--5                & 6--7  & $\geq$8   \\ \hline
-%    500--800                             & CR                  & CR    & SR        \\ \hline
-%    800--1000                            & \multirow{2}{*}{CR} & SR    & SR        \\ \cline{1-1} \cline{3-4}
-%    $>$1000                              &                     & SR    & SR        \\ \hline
-  \end{tabular}
-  \caption{\label{fig:analysis_regions} Illustration depicting the (\Njets, \MJ) binning after the baseline selection, with control and signal region bins denoted by ``CR'' and ``SR'', respectively.}
+\begin{tabular}{ |c|c|c|c| }
+\hline
+\multirow{2}{*}{\MJ [\GeV]}          &  \multicolumn{3}{c|}{\Njets}                      \\ \cline{2-4}
+                                     &  4--5                        & 6--7  &  $\geq 8$  \\ \hline
+500--800                             &  CR                          & CR    &  SR        \\ \hline
+800--1000                            &  \multirow{2}{*}{CR}         & SR    &  SR        \\ \cline{1-1} \cline{3-4}
+$> 1000$                             &                              & SR    &  SR        \\ \hline
+\end{tabular}
+\caption{Illustration depicting the \Njets, \MJ binning after the baseline selection, with control and signal region bins denoted by ``CR'' and ``SR'', respectively.}
+\label{fig:analysis_regions} 
 \end{figure}
 
 Within each \Njets and \MJ bins, the \Nb distribution is examined for evidence of new physics and is separated into bins of $\Nb=1$, 2, 3, and $\geq 4$.
 The two lowest \Nb bins are used to provide constraints on the background normalizations and systematic uncertainites, while the higher \Nb bins are the most sensitive to potential signals due to its larger signal-to-background ratios.
 
 In total, this analysis has 8 kinematic regions--3 control and 5 signal regions with four \Nb bins per kinematic region.
+The simulated \Nb distribution for the SM background processes and a signal model with $\mglu = 1600~\GeV$ for each kinematic region is shown in Figure~\ref{prefit_distributions} and the corresponding yields are given in Table~\ref{prefit_yields}.
 
 \end{section}
+
+% 1. Show the pre-fit plots and yields here.
