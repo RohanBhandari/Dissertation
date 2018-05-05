@@ -5,7 +5,7 @@ Each uncertainty is incorporated in the fit with template \Nb histograms to acco
 The nuisance parameters are subject to Gaussian constraints, normalized so that $\theta=0$ corresponds to the nominal \Nb shape and $\theta=\pm1$ corresponds to $\pm1$ standard deviation (s.d.)\ variation of the systematic uncertainty.
 These uncertainties affect only the \Nb shape for \ttbar, QCD, and W+jets backgrounds, because their normalizations are determined from data, while for the other (subleading) backgrounds the uncertainties affect both the \Nb shape and normalization.
 
-\begin{section}{Gluon Splitting}
+\begin{section}{Gluon Splitting Rate}
 
 The primary source of systematic uncertainty is on the modelling of the rate of gluon splitting, as events with a gluon splitting to \bbbar provide an additional source of b quarks in events.
 As this process may not be properly simulated, constraining the splitting rate in data is crucial for establishing a robust prediction of the \Nb distribution.
@@ -65,7 +65,8 @@ The ratio of data to simulation yields is shown in the lower panel.}
 \includegraphics[angle=0,width=0.45\columnwidth]{fig/bin20_ttbar_gs_mconly.pdf}
 \includegraphics[angle=0,width=0.45\columnwidth]{fig/bin21_ttbar_gs_mconly.pdf}
 \end{center}
-\caption{Effect of the $\pm 1$~s.d.\ variations of the gluon splitting rate on the \Nb distribution in \ttbar normalized to $35.9~\ifb$ for the two most sensitive bins: ($\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$) (left) and ($\Njets \geq 8$, $\MJ > 1000~\GeV$) (right).}
+\caption{Effect of the $\pm 1$~s.d.\ variations of the gluon splitting rate on the \Nb distribution in \ttbar events for the two most sensitive bins: ($\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$) (left) and ($\Njets \geq 8$, $\MJ > 1000~\GeV$) (right).
+Event yields are normalized to that expected in $35.9~\ifb$ of data.}
 \label{fig:gs_variations}
 \end{figure}
 
@@ -90,18 +91,123 @@ No GS & $1.21 \pm 0.08$ & $1.28 \pm 0.35$ & $ 1.15 \pm 0.26$  & $ 1.22 \pm 0.13$
 \begin{section}{b-tagging Data-to-simulation Scale Factors}
 
 Another significant systematic uncertainty is the uncertainty in the data-to-simulation scale factors (SF) for b~tagging efficiency and mistag rates.
-These scale factors are derived from data in various QCD and \ttbar control samples and are binned in jet \pT and jet flavor (light + g, c, and b)~\cite{CMS-DP-2017-012}.
-The $\pm 1$~s.d.\ \Nb templates for these scale factors are assessed by varying them according to the uncertainties in their measurements.
-The effect of these variations on the \Nb distribution in \ttbar events is shown in Figure~\ref{fig:sf_variations}.
+Simulating the b-tagging algorithm relies on understanding the detailed behavior of the detector and also accurate modelling of the parton shower and hadronization, both of which are non-trivial.
+Therefore, it is important to to measure the b~tagging efficiencies and mistag rates in data and correct the simulation to match.
+
+The difference between data and simulation is corrected for by using a per jet data-to-simulation SF
+\begin{align}
+SF_{f} = \varepsilon^{data}_{f}(\pT)/\varepsilon^{sim.}_{f}(\pT).
+\end{align}
+where $\varepsilon^{data}_{f}(\pT)$ and $\varepsilon^{sim.}_{f}(\pT)$ are the tagging efficiencies for for a jet with flavor $f$ as a function of \pT in data and simulation, respectively.
+No dependence on $\eta$ is derived due to limited data sample sizes.
+In simulation, the efficiency is determined by matching jets to their generated hadron to determine their flavor and then measuring how many of those jets are correctly tagged.
+In data, this is done by using control regions determined by specific selection requirements that produce pure samples of a certain flavor of jets while not biasing the jets with respect to variables used in the b~tagging algorithm.
+
+The probability to tag a light-flavor or gluon jet (light jet), is measured in an inclusive QCD sample.
+This sample is selected through a series of triggers that require at least one jet over a certain \pT threshold, the lowest being $40~\GeV$.
+
+The probability to tag a charm-flavor jet (c jet) is determined by measurements in two charm-enriched control regions.
+The first control region is formed by selecting events in which a charm quark is produced in association with a W boson.
+The main contributions to this process is from $\mrm{s} + \mrm{g} \to \mrm{W^{-}} + \mrm{c}$ and $\mrm{\bar{s}} + \mrm{g} \to \mrm{W^{+}} + \mrm{\bar{c}}$, where a key property is that the W boson and quark have oppositely signed electrical charges.
+The dominant background is $\mrm{W} + \mrm{q\bar{q}}$ events, which are produce an equal amount of events with same- and opposite-signed W boson and quark pairs.
+Thus, this background is removed by measuring its contribution in the same-sign channel and the subtracting it from the opposite-sign channel, resulting in a pure $\mrm{W} + \mrm{c}$ channel.
+The second charm-enriched control region is created by selecting single-lepton \ttbar events.
+As hadronically-decaying W bosons decay to a charm quark about 50\% of the time, about one of two single-lepton \ttbar events will contain a charm quark.
+Finally, measurements in these two regions are combined using the best linear unbiased estimator (BLUE) method, described in Reference~\cite{LYONS1988110}.
+
+The probability to tag a b-flavor jet (b jet) is computed using QCD and \ttbar control regions.
+The QCD control regions are enriched in b quarks by requiring that at least one jet contains a muon with $\pT > 5~\GeV$, which takes advantage of the high branching fraction to leptons of b hadrons.
+In the \ttbar-dominated regions, there are two b quarks per event, due to the decay of the two top quarks, and the b quark purity is further enhanced by limiting the number of non-b jets in the event through the requirement that either one or both of the W bosons decays leptonically, creating independent single-lepton and di-lepton control regions.
+Multiple measurements are made in these regions and are then combined through the BLUE method.
+
+The resulting SFs, including their uncertainties, are shown in Figure~\ref{fig:btag_sfs}.
+A complete discussion of how the SF measurements are made can be found in Reference~\cite{Sirunyan:2017ezt}.
+
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/sfs_bjet.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/sfs_cjet.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/sfs_ljet.pdf}
+\end{center}
+\caption{The data-to-simulation scale factors for the tagging efficiency of b-flavor jets (top-left), charm-flavor jets (top-right), and light-flavor or gluon jets (bottom) are shown as a function of jet \pT.
+The associated uncertainty with each scale factor is shown as a blue hashed band.}
+\label{fig:bkg_sys_tables}
+\end{figure}
+
+The systematic uncertainties on the \Nb shape are assessed by the $\pm 1$~s.d.\ \Nb templates resulting from varying the SFs according to their uncertainties.
+Because the b and c jet SFs have correlated uncertainties, they are conservatively varied together, creating one set of templates.
+The light-flavor SFs are uncorrelated with the b and c jet SFs and are varied independently.
+The effect of these variations on the \Nb distribution in \ttbar events is shown in Figure~\ref{fig:sf_bc_variations} and Figure~\ref{fig:sf_udsg_variations}.
+
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/bin20_ttbar_btag_bc_mconly.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/bin21_ttbar_btag_bc_mconly.pdf}
+\end{center}
+\caption{Effect of the $\pm 1$~s.d.\ correlated variations of the b-flavor and c-flavor jet data-to-simulation scale factors on the \Nb distribution in \ttbar for the two most sensitive bins: ($\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$) (left) and ($\Njets \geq 8$, $\MJ > 1000~\GeV$) (right).
+Event yields are normalized to that expected in $35.9~\ifb$ of data.}
+\label{fig:sf_bc_variations}
+\end{figure}
+
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/bin20_ttbar_btag_udsg_mconly.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/bin21_ttbar_btag_udsg_mconly.pdf}
+\end{center}
+\caption{Effect of the $\pm 1$~s.d.\ variations of the light-flavor jet data-to-simulation scale factors on the \Nb distribution in \ttbar for the two most sensitive bins: ($\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$) (left) and ($\Njets \geq 8$, $\MJ > 1000~\GeV$) (right).
+Event yields are normalized to that expected in $35.9~\ifb$ of data.}
+\label{fig:sf_udsg_variations}
+\end{figure}
+
+\end{section}
+
+\begin{section}{Lepton Fake Rate in QCD}
+
+While the QCD normalization is measured from data, it is mostly constrained by the $\Nleps = 0$ selection and applied in a $\Nleps = 1$ region.
+If the simulated \Nleps distribution is not modelled perfectly, there may be residual differences between the normalizations of these two regions.
+For processes that have true prompt leptons, such as \ttbar and \Wjets, the \Nleps distribution is well modelled, because the dominant effects are the W branching fractions and the acceptance (including selection efficiency), both of which are well understood. 
+For QCD, however, this is less well modelled as the simulation of the tail of the jet fragmentation function as well as detector effects that can produce fake leptons are not as well understood.
+
+To assign a systematic uncertainty on the modelling of the ratio of 0-lepton to 1-lepton events in QCD, the lepton isolation distributions are studied.
+Figure~\ref{fig:lep_iso} shows the relative isolation distributions for eletrons (left) and muons (right) in a data sample corresponding to the control regions.
+The binning of the histograms are chosen such that the first bin corresponds to the relative isolation requirement for signal leptons (0.1 for electrons and 0.2 for muons).
+The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{sec:crfit}.
+
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/iso_els.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/iso_mus.pdf}
+\end{center}
+\caption{The relative isolation distribution for electrons (left) and muons (right) in the control region bins.
+The binning of the histograms are chosen such that the first bin corresponds to the relative isolation requirement for signal leptons (0.1 for electrons and 0.2 for muons).
+The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{sec:crfit}.}
+\label{fig:lep_iso}
+\end{figure}
+
+Table~\ref{tab:lep_iso} shows the ratio of $I^{\mrm{rel}} < 0.1(0.2)$ to $I^{\mrm{rel}} \geq 0.1(0.2)$ for electrons(muons) in QCD and data with contributions for all other processes (\ttbar, \Wjets, Other) subtracted.
+As the ratio in data agrees to that in QCD simulation within 20\%, an additional 20\% log-normal uncertainty is assigned to the QCD normalization in 1-lepton bins.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{l | cc|c | cc|c }
+\hline\hline
+\multirow{2}{*}{Process}  &  \multicolumn{3}{c|}{Electrons}                                        &  \multicolumn{3}{c}{Muons}                                        \\
+                          &  $I^{\mrm{rel}} < 0.1$          &  $I^{\mrm{rel}} \geq 0.1$  & ratio  &  $I^{\mrm{rel}} < 0.2$      &  $I^{\mrm{rel}} \geq 0.2$  &  ratio \\
+\hline
+QCD                       &  496.8                          &  2455.5                    &  0.20  &  219.8                      &  36553.3                   & 0.0060 \\
+Data - all other          &  452.8                          &  2500.5                    &  0.18  &  275.4                      &  37497.7                   & 0.0073 \\
+\hline\hline
+\end{tabular}
+\caption{Comparison of the relative isolation distributions, as described in the caption of Figure~\ref{fig:lep_iso}, for electrons and muons between QCD and data with contributions from ``all other'' (\ttbar, \Wjets, and Other) subtracted.}
+\label{tab:lep_iso}
+\end{table}
 
 \end{section}
 
 \begin{section}{Additional systematic uncertainties}
 
-Other experimental uncertainties are small and include lepton selection efficiency, lepton misidentification rate, jet energy scale, jet energy resolution, and integrated luminosity.
+Other experimental uncertainties are small and include lepton selection efficiency, jet energy scale, jet energy resolution, and integrated luminosity.
 The uncertainty associated with lepton selection efficiency is determined by varying the efficiency to select a lepton within its uncertainty determined from data.
-The $\Nleps$ distribution for QCD events may not be simulated well because it relies on modeling the tail of the fragmentation function and various detector effects.
-To account for this, an uncertainty of 20\% is assigned to the relative normalization of QCD events in the 0- and 1-lepton bins, which is motivated by data-to-simulation studies of lepton isolation distributions.
 Jet energy scale uncertainties~\cite{Chatrchyan:2011ds,1748-0221-12-02-P02014} are assessed by varying the \pT of small-$R$ jets as a function of \pT and $\eta$.
 The uncertainty arising from jet energy resolution~\cite{Chatrchyan:2011ds,1748-0221-12-02-P02014} is determined by applying an $|\eta|$-dependent factor to the jet \pT to match the jet energy resolution observed in data.
 The integrated luminosity is varied according to its uncertainty of 2.5\%~\cite{CMS-PAS-LUM-17-001}, affecting only the backgrounds estimated from simulation.
