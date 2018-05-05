@@ -130,6 +130,7 @@ The excess ECAL energy is preferentially given to photons over neutral hadrons, 
 
 As the identification criteria for selecting PF electrons and PF muons are weak, these object serve as candidate particles. 
 To increase the purity of true electrons(muon), more stringent criteria must be passed for a PF electron(muon) to be considered an analysis-level electron(muon).
+The number of analysis-level leptons, where a lepton is defined as either an electron or muon, is denoted as \Nleps.
 
 \begin{subsection}{Electrons}
 
@@ -161,13 +162,12 @@ Additionally, to preferentially select electrons that originate in the decay of 
 The relative isolation of a particle $I^{\mrm{rel}}$ is quantified using an optimized version of the mini-isolation variable $I_{\mrm{mini}}$.
 Mini-isolation is computed as the scalar sum of the \pT of charged hadrons from the PV, neutral hadrons, and photons that are within a cone of radius $R^{\text{mini-iso}}$ surrounding the electron momentum vector $\vec{p}$ in $\eta$-$\phi$ space~\cite{Rehermann:2010vq}.
 The cone radius $R^{\text{mini-iso}}$ varies with $1/\pT$ according to
-
 \begin{align}
 R^{\text{mini-iso}} &=\begin{cases} 0.2, &
 \pT \leq 50\GeV \\
 {10~\GeV}/{\pT}, & 50 < \pT \leq 200~\GeV \\
 0.05, & \pT > 200~\GeV.
-\end{cases}\label{eqn:mini_iso_r}
+\end{cases}
 \end{align}
 
 The \pT-dependent cone size reduces the rate of accidental overlaps between the electron and jets in high-multiplicity or highly Lorentz-boosted events, particularly overlaps between bottom quark jets and leptons originating from a boosted top quark.
@@ -200,7 +200,7 @@ Criteria                                       &  Requirement \\
 Is PF muon                                     &  True        \\
 Fraction of valid tracker hits                 &  $> 0.8$     \\
 \hline
-\multicolumn{2}{c}{\textsc{AND}}                                       \\      
+\multicolumn{2}{c}{\texttt{AND}}                                       \\      
 $|d_0|$~[mm]                                   &  $< 2$       \\
 $|d_z|$~[mm]                                   &  $< 5$       \\
 Is global muon                                 &  True        \\
@@ -208,7 +208,7 @@ Normalized global-track $\chi^2$               &  $< 3$       \\
 $\chi^2$ of tracker-standalone position match  &  $< 12$      \\
 Track-kink $\chi^2$                            &  $< 20$      \\
 Segment compatibility                          &  $> 0.303$   \\
-\multicolumn{2}{c}{\textsc{OR}}                                        \\
+\multicolumn{2}{c}{\texttt{OR}}                                        \\
 Segment compatibility                          &  $> 0.451$   \\
 \hline\hline
 \end{tabular}
@@ -275,7 +275,11 @@ Lastly, to prevent double-counting, any jets which contain a PF candidate identi
 
 Finally, to be considered an analysis-level jet, the jets must have $\pT > 30~\GeV$, $|\eta| \leq 2.4$, and must pass a set of loose identification requirements~\cite{jet_id,1748-0221-6-11-P11002} to surpress, for example, calorimeter noise.
 These requirements are shown in Table~\ref{tab:jet_id}.
-The resulting jets are considered to be ``\smallR'' jets.
+The resulting jets are considered to be ``\smallR'' jets  and the variable \Njets represents the number of these jets in an event.
+Additionally, a proxy for the hadronic energy scale of an event, \HT, can be defined as
+\begin{align}
+\HT = \sum_{i = 1}^{\Njets} p_{T,i}^{jet}
+\end{align}
 
 \begin{table}[tb!]
 \centering
@@ -339,6 +343,8 @@ This corresponds to a mis-tag rate for c-quark jets of 13--15\% (11--13\%) in th
 The tagging efficiency increases with \pT before decreasing to $\approx 50\%$ for jets above $150~\GeV$.
 The b-tagging efficiency as a function of jet \pT is shown in Figure~\ref{fig:btag_eff}.
 
+The number of b-tagged jets in an event is denoted as \Nb.
+
 \begin{figure}[tbp!]
 \centering
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/btag_eff.pdf}
@@ -369,6 +375,38 @@ Thus, by clustering the calibrated \smallR jets, the \largeR jets already incorp
 In addition to \smallR jets, the jets associated with selected leptons are included in the formation of \largeR jets in order to capture as much of the kinematic information as possible.
 For example, this helps reduce the difference between \largeR jets formed by clustering hadronic and (semi-)leptonic decays, as by including the lepton, the only information difference between the two scenarios is due to the undetected neutrino(s).
 
-This technique of clustering \smallR jets into \largeR jets has been used previously by both the ATLAS and CMS collaboration, e.g. References~\cite{Aaboud:2017aeu,Khachatryan:2016uwr}.
+This technique of clustering \smallR jets into \largeR jets has been used previously by both the ATLAS and CMS collaborations, e.g. References~\cite{Aaboud:2017aeu,Khachatryan:2016uwr}.
+
+\begin{subsection}{\MJ}
+
+A measure of the mass-scale of an event, \MJ, can be constructed by summing the masses of large-radius jets, defined as
+\begin{align}
+\MJ = \sum_{J_{i}\, \in\, {\text{large-}R\text{ jets}}} m(J_i)
+\end{align}
+where $m(J)$ is the mass of a single \largeR jets.
+
+The quantitity \MJ has significant discriminating power between SM background processes and signal processes, as SM events tend to have significantly lower mass-scales than signal events that involve high mass particles.
+For example, \MJ in events with only a produced \ttbar pair is limited to be $\lesssim 2m_{top} \approx 350~\GeV$.
+This is because the top quarks decay back-to-back and if each top quark's decay products are captured in a single \largeR jet, two \largeR jets are clustered each with $m(J) = m_{top}$, resulting in $\MJ = 2m_{top}$.
+In the case, where a top quark is not fully contained in a \largeR jet, the mass of that \largeR jet, and correspondingly \MJ, is even smaller.
+For signal events, however, the mass-scale is roughly set by the gluino mass, which is on the order of $1~\TeV$.
+
+The \MJ distribution in \ttbar and signal events with $\mglu = 1000~\GeV$ and $1600~\GeV$, selected with a $\Njets \geq 8$ requirement to ensure both processes have a \Njets distribution, is shown in Figure~\ref{fig:mj_distributions}. 
+From the figure, it can be seen that the \MJ distribution gets increasingly harder with higher gluino mass.
+Also of note is that the \MJ distribution in \ttbar events extends past $2m_{top}$.
+This is because, in the presence of significant ISR, the ISR jets can either overlap with the \ttbar daughter jets or boost the \ttbar system such that the system is collimated, both with result in high-mass \largeR jets and, correspondingly, high \MJ.
+Processes of this nature are responsible for generating high \MJ background events.
+
+The quantity \MJ was proposed in phenomenological studies~\cite{Hook:2012fd,Cohen:2012yc,Hedri:2013pvl} and was first used for RPC SUSY searches by the ATLAS Collaboration in all-hadronic final states~\cite{Aad:2015lea,Aad:2013wta} and by the CMS Collaboration in single-lepton events~\cite{Khachatryan:2016uwr,Sirunyan:2017fsj}.
+Additionally, the basic properties and performance of the \MJ variable were commissioned using early $\sqrt{s} = 13~\TeV$ data~\cite{CMS-DP-2015-035}.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.80\columnwidth]{fig/mj_distributions.pdf}
+\caption{Distributions of \MJ, normalized to the same area, for \ttbar events and signal events with $\mglu = 1000~\GeV$ and $1600~\GeV$ in a selection of \baseNleps, \baseHT, $\Njets \geq 8$, \baseMJ, and \baseNb.}
+\label{fig:mj_distributions}
+\end{figure}
+
+\end{subsection}
 
 \end{section}
