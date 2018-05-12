@@ -74,9 +74,9 @@ The long-awaited discovery of the Higgs boson~\cite{Aad:2012tfa,Chatrchyan:2012x
 This relatively low mass of the Higgs boson, however, creates two related theoretical concerns.
 First, the Higgs mass is tied to the electroweak scale by the relation 
 \begin{align}
-v = \frac{\mh}{\sqrt{2\lambda}} \approx 246~\GeV
+v = \frac{\mh}{\sqrt{2}\lambda_h} \approx 246~\GeV
 \end{align}
-where $v$ is the higgs vacuum expectation value (vev), $m_H$ is the physical Higgs mass, and $\lambda$ is a positive constant.
+where $v$ is the higgs vacuum expectation value (vev), $m_H$ is the physical Higgs mass, and $\lambda_h$ is the Higgs Yukawa coupling.
 The vev directly dictates the electroweak scale and is only on the order of 100~\GeV.
 The next largest known energy scale is that of quantum gravity and is typically defined as the Planck mass, which is on the order of $10^{19}~\GeV$.
 The question as to why these two scales are so discrepant is known as the Hierarchy Problem~\cite{Barbieri:1987fn}.
@@ -89,7 +89,8 @@ The Higgs mass can be broken down into two components, its bare mass, $m_{H,0}$,
 As a scalar particle, the Higgs boson mass receives contributions from all massive particles, and in partcular, for a fermion, $f$, the contribution to the Higgs mass at the one-loop level, corresponding to the the diagram shown in Figure~\ref{fig:higgs_fermion_loop}, is of the form
 \begin{align}
 \delta \mh^2|_f &= -\frac{\lambda^2_f}{8\pi^2}N_f \int^{\Lambda_{UV}} \frac{d^4p}{p^2} \nonumber \\
-                &= -N_f\frac{\lambda^2_f}{8\pi^2 } \left[\Lambda^2_{UV} - 6m_f\ln\left(\frac{\Lambda_{UV}}{m_f}\right) + 2m_f^2\right] + ...,
+                &= -N_f\frac{\lambda^2_f}{8\pi^2 } \left[\Lambda^2_{UV} - 6m_f^2\ln\left(\frac{\Lambda_{UV}}{m_f}\right) + 2m_f^2\right] + \mathcal{O}\left(\frac{1}{\Lambda^2}\right),
+\label{eqn:higgs_fermion_correction}
 \end{align}
 with $\lambda_f$ the Yukawa coupling and $N_f$ the number of fermionic degrees of freedom.
 The quantity $\Lambda_{UV}$ is the cutoff of the momentum integral, which represents the approximate scale at which the Standard Model is no longer valid.
@@ -156,10 +157,11 @@ gluino                     &  1/2                 & $\glu$                      
 With the addition of these superpartners, a mechanism for naturally cancelling the radiative corrections to the Higgs mass is apparent, as the Higgs couples to these new massive particles as well, providing additonal radiative corrections that cancel the SM contributions.
 For example, for a fermion $f$, the radiative corrections from the corresponding sfermion $\tilde{f}$, shown in Figure~\ref{fig:higgs_scalar_loop}, take the form
 \begin{align}
-\delta \mh^2|_{\tilde{f}} = +N_s\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-\Lambda^2_{UV} + 4m_{\tilde{f}}\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] + ...,
+\delta \mh^2|_{\tilde{f}} = &+N_{\tilde{f}}\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-\Lambda^2_{UV} + 2m_{\tilde{f}}^2\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] \nonumber \\
+                            &-N_{\tilde{f}}\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-2m_f^2 + 4m_f^2\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] + \mathcal{O}\frac{1}{\Lambda^2_{UV}}
 \end{align}
-where, the number of scalar degrees of freedom, $N_s = N_f$ and $\lambda_{\tilde{f}} = -\lambda_f^2$ through the imposition of supersymmetry.
-In the case where $m_f = m_{\tilde{f}}$, this perfectly cancels not only the quadratic divergence but also the higher-order SM corrections, solving The Naturalness Problem.
+using the relation $\sqrt{2}m_f = \lambda_f\nu$.
+Supersymmetry imposes that $N_{\tilde{f}} = N_f$ and $\lambda_{\tilde{f}} = -\lambda_f^2$, and thus, in the case where $m_f = m_{\tilde{f}}$, this perfectly cancels not only the quadratic divergence in Equation~\ref{eqn:higgs_fermion_correction} but also the higher-order corrections, solving the Hierarchy Problem.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -173,7 +175,7 @@ Of course, no superparticles have been observed at the SM scale.
 This, however, does not imply that supersymmetry is incorrect but only that if it exists, it is a broken symmetry.
 In this scenario where $m_f \neq m_{\tilde{f}}$, the quadratically divergent terms still cancel and what is left is only a lograithmic divergence, mediated by the squared mass difference of the partner particles:
 \begin{align}
-\delta \mh^2 = N_f\frac{\lambda_s}{8\pi^2} \left(m_t^2 - m_{\tilde{t}}^2\right) \ln\left(\frac{\Lambda_{UV}}{m_{\tilde{t}}}\right) + ...\ .
+\delta \mh^2 = N_f\frac{\lambda_s}{8\pi^2} \left(m_f^2 - m_{\tilde{f}}^2\right) \ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right) + ...\ .
 \label{eqn:total_higgs_correction}
 \end{align}
 This squared mass difference defines the degree to which the Higgs mass is fine-tuned.
@@ -305,7 +307,7 @@ $t$  &  $4 \times 10^{-5}$   &  $6 \times 10^{-5}$  &  $2 \times 10^{-4}$ \\
 \end{table}
 
 Because of these considerations, MFV SUSY is an intriguing class of models to investigate experimentally.
-In particular, due to the high gluino cross-section and large value of $\lambda^{''}_{\mrm{t}\mrm{b}\mrm{s}}$, a search for the pair-production of gluinos that decay via \rpvDecay, as shown in Figure~\ref{fig:rpv_decay}, is well-motivated.
+In particular, due to the high $\glu\glu$ cross-section and large value of $\lambda^{''}_{\mrm{t}\mrm{b}\mrm{s}}$, a search for the pair-production of gluinos that decay via \rpvDecay, as shown in Figure~\ref{fig:rpv_decay}, is well-motivated.
 
 The remainder of this dissertation is dedicated to describing such a search conducted with the Compact Muon Solenoid detector using $\sqrt{s} = 13~\TeV$ $pp$ collisions.
 
