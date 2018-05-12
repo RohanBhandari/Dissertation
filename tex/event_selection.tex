@@ -2,23 +2,51 @@
 
 \begin{section}{Baseline selection}
 
-One of the main challenges for a SUSY search is that the ratio of SM events to SUSY events is (ROUGHLY) 10 billion to 1.
+One of the main challenges for a SUSY search is that the ratio of SM-to-SUSY events is $\mathcal{O}(10^{12} - 10^{14})$.
 To surmount this problem, it is paramount to develop highly efficient signal-to-background discriminators.
-Luckilly, SUSY signatures typically have characteristics unlike most SM processes.
-In particular, for the T1tbs process, events are expected to have a large number of jets, many of which are b-quark jets, resulting in large amount of hadronic energy.
-Additionally, the mass scale of the event is expected to be larger than most SM events due to the high masses of the gluinos (i.e. \~1~\TeV).
-These features are used to construct the ``baseline selection'', defined as a set of requirements that events must pass in order to be included in the analysis.
-Here the baseline selection is defined as $\Nleps = 1$, $\HT > 1200~\GeV$, $\MJ > 500~\GeV$, $\Njets \geq 4$, and $\Nb \geq 1$.
-Figure~\ref{nminus1} shows the ``N-1'' distributions of these variables, which are plots showing the 1D distribution of a variable with the baseline selection applied, except for the requirement corresponding to the plotted variable.
-Figure~\ref{cutflow} shows a ``cutflow'' table, which depicts the expected yields for each process as each requirement of the baseline selection is indiviually applied.
-Note that this analysis explicitly requires exactly 1 lepton (defined as a muon or electron).
-As can be seen in 0-lepton bin of the N-1 plot of \Nleps, there is still significant amounts of QCD production compared to the expected signal yield.
-Requiring exactly 1 lepton reduces the background by XX\%, while only reducing the signal by YY\% compared to being inclusive in \Nleps.
-An additional benefit of this selection is that the SM backround is dominated by a single process (\ttbar), which reduces the complexity of the background prediction.
-Including additional \Nleps regions is being investigated for future iterations of the analysis.
-A final note of interest is that there is no requirement on the \MET, making this analysis sensitive to BSM models other than RPV SUSY that produce either little or no \MET in an event.
+Fortunately, SUSY signatures typically have characteristics unlike most SM processes.
+For the T1tbs process, in particular, events are expected to have a large number of jets, many of which are b-quark jets, resulting in a large amount of \HT and many b-tagged jets.
+Additionally, the mass scale of the event is expected to be larger than most SM events due to the high masses of the gluinos ($\mathcal{O}(1~\TeV)$), as discussed in Section~\ref{subsec:MJ}.
 
-A final requirement for the baseline selection is that events must pass a series of filters designed to remvoe poorly reconstructed events. These standard filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good PVs.
+These features are used to construct the ``baseline selection'', defined as a basic set of requirements that events must pass, and to reduce the signal-to-background ratio to a more manageable value of $\mathcal{O}(10^2)$.
+Here the baseline selection is defined as \baseNleps, \baseHT, \baseMJ, \baseNjets, and \baseNb.
+To see the separation of signal and background in these variables, the corresponding ``N-1'' distributions, i.e. the distribution of a variable with the baseline selection applied except for the requirement corresponding to the binned variable, are depicted in Figure~\ref{fig:nminus1} with the black dashed vertical line representing the value of the baseline cut.
+Additionally, a ``cutflow table'' that depicts the expected yields for background and signal processes as each baseline selection requirement is indiviually applied is shown in Table~\ref{tab:cutflow}.
+Rows above the horizontal line correspond to requirements in the baseline selection, while those below correspond to additional kinematic cuts.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nminus1_nleps.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nminus1_ht.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nminus1_mj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nminus1_njets.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nminus1_nb.pdf}
+\caption{The N-1 plots for \Nleps (top-left), \HT (top-right), \MJ (middle-left), \Njets (middle-right), and \Nb (bottom).
+The black dashed vertical line represents the value of the corresponding baseline requirement.}
+\label{fig:nminus1}
+\end{figure}
+
+\begin{table}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.90\columnwidth]{fig/cutflow.pdf}
+\caption{Expected yields in $35~\ifb$ from simlulations of SM and signal processes.
+Rows above the horizontal line correspond to requirements in the baseline selection, while those below correspond to additional kinematic cuts.}
+\label{tab:cutflow}
+\end{table}
+
+The \baseHT cut sets the hadronic energy scale of the selected events and reduces contributions from processes other than QCD, \ttbar, and \Wjets.
+At this point, the dominate background is QCD and is signicantly reduced by selecting events with \baseNleps, which leaves the QCD, \ttbar, and \Wjets contributions similar in scale.
+In order to create a \ttbar dominant background, \baseNb is required as \ttbar events have at least two b-quark jets, while QCD and \Wjets contributions largely pass the selection by the mistagging of at least one jet.
+Finally, the \baseNjets and \baseMJ cuts are applied in order to further increase the \ttbar purity of the analysis region.
+
+A benefit of these selections is that the background is dominated by a single process, \ttbar, which reduces the complexity of the background prediction.
+This is especially necessary as, after these cuts, the analysis region is on the kinematic tails of SM distributions where the physics is less well-kown and correspondingly less well-modelled, typically requiring data-driven background predictions.
+
+Lastly, the baseline selection requires that events pass a series of filters designed to remvoe poorly reconstructed events. 
+These filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good PVs.
+
+A final note of interest is that there is no requirement on the \MET, making this analysis sensitive to BSM models other than MFV SUSY that produce either little or no \MET in an event.
+While the T1tbs model is used as a benchmark for interpreting results, to take advantage of this feature, this search is structured to be generically sensitive to high-mass signatures with large jet and bottom quark jet multiplicities, which are potential features of other BSM models.
 
 \end{section}
 
@@ -29,7 +57,7 @@ In particular, events must pass an \texttt{OR} of the \trigHT trigger, which req
 
 Figure~\ref{fig:ht_trigger} shows the performance of the \trigHT trigger as a function of \HT during the first 27.3~\ifb (Runs B-G, top-left), last 8.7~\ifb (Run H, top-right), and full dataset (Runs B-H, bottom).
 The trigger performances are measured in a data sample collected using the \trigEle trigger and offline requirements of at least one electron and at least 4 jets.
-While the trigger efficiency for Runs B-G is 100\% after the trigger plateau of roughly $\HT = 1000~GeV$, the trigger efficiency only performs with 80\% efficiency in Run H.
+While the trigger efficiency for Runs B-G is 100\% after the trigger plateau of roughly $\HT = 1000~\GeV$, the trigger efficiency only performs with 80\% efficiency in Run H.
 This inefficiency was caused by an issue with an updated trigger implementation that erroneously excluded high \pT jets from the online-\HT calculation.
 This effect corresponds to an overall trigger efficency of 95\%, corresponding to a loss of about 2~\ifb of data.
 
@@ -86,8 +114,8 @@ There are additional rare background processes, jointly noted as ``Other'', with
 In order to further increase the signal-to-background ratio, as well as create background-dominated control regions, the analysis region is binned with respect to \Njets and \MJ. 
 The \Njets bins are defined as $4 \leq \Njets \leq 5$, $6 \leq \Njets \leq 7$, and $\Njets \geq 8$.
 Each \Njets bin is further split into bins of $500 < \MJ \leq 800~\GeV$, $800 < \MJ \leq 1000~\GeV$, and $\MJ > 1000~\GeV$, with the exception of the $4 \leq \Njets \leq 5$ bin for which the two highest \MJ bins are combined due to the limited data sample size in the $\MJ \geq 1000~\GeV$ bin.
-A diagram representing this binning is shown in Figure~\ref{fig:analysis_regions}
-The low-\Njets, low-\MJ bins are expected to be background-dominated and are used as control regions for constraining sytematics and for validating the prediction methodology, while the high-\Njets, high-\MJ bins.
+A diagram representing this binning is shown in Figure~\ref{fig:analysis_regions}.
+The low-\Njets, low-\MJ bins are expected to be background-dominated and are used as control regions for constraining sytematics and for validating the prediction methodology, while the high-\Njets, high-\MJ bins are used as signal regions.
 
 \begin{figure}[tbp!]
 \centering
@@ -103,12 +131,33 @@ $> 1000$                             &                              & SR    &  S
 \label{fig:analysis_regions} 
 \end{figure}
 
-Within each \Njets and \MJ bins, the \Nb distribution is examined for evidence of new physics and is separated into bins of $\Nb=1$, 2, 3, and $\geq 4$.
+Within each \Njets and \MJ bin, the \Nb distribution is examined for evidence of new physics and is separated into bins of $\Nb = 1$, 2, 3, and $\geq 4$.
 The two lowest \Nb bins are used to provide constraints on the background normalizations and systematic uncertainites, while the higher \Nb bins are the most sensitive to potential signals due to its larger signal-to-background ratios.
 
 In total, this analysis has 8 kinematic regions--3 control and 5 signal regions with four \Nb bins per kinematic region.
-The simulated \Nb distribution for the SM background processes and a signal model with $\mglu = 1600~\GeV$ for each kinematic region is shown in Figure~\ref{prefit_distributions} and the corresponding yields are given in Table~\ref{prefit_yields}.
+The simulated \Nb distribution of the SM background processes and a signal model with $\mglu = 1600~\GeV$ for the control and signal regions 
+are shown in Figure~\ref{fig:nb_cr_dists} and Figure~\ref{fig:nb_sr_dists}, respectively.
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj45_lowmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj45_highmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj67_lowmj.pdf}
+\caption{The simulated \Nb distribution for background and signal processes in the control region bins.
+The top-left plot corresponds to the $4 \leq \Njets \leq 5$, $500 \leq \MJ \leq 800~\GeV$ bin, the top-right plot to the $5 \geq \Njets \geq 6$, $\MJ \geq 800~\GeV$ bin, and the bottom plot to the $6 \leq \Njets \leq 7$, $500 \leq \MJ \leq 800~\GeV$ bin.}
+\label{fig:nb_cr_dists}
+\end{figure}
+
+\begin{figure}[tbp!]
+\centering
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj67_highmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj67_vhighmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj8_lowmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj8_highmj.pdf}
+\includegraphics[angle=0,width=0.35\columnwidth]{fig/nb_nlep1_nj8_vhighmj.pdf}
+\caption{The simulated \Nb distribution for background and signal processes in the signal region bins.
+The top-left plot corresponds to the $6 \leq \Njets \leq 7$, $800 \leq \MJ \leq 1000~\GeV$ bin, the top-right plot to the $6 \geq \Njets \geq 7$, $\MJ \geq 1000~\GeV$ bin, the middle-left plot to the $\Njets \geq 8$, $500 \leq \MJ \leq 800~\GeV$ bin, the middle-right plot to the $\Njets \geq 8$, $800 \leq \MJ \leq 1000~\GeV$, and the bottom plot to the $\Njets \geq 8$, $\MJ \geq 1000~\GeV$ bin.}
+\label{fig:nb_sr_dists}
+\end{figure}
 
 \end{section}
-
-% 1. Show the pre-fit plots and yields here.
