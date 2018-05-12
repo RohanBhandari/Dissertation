@@ -231,6 +231,29 @@ These values are similar for other (\Njets, \MJ) bins.}
 \label{fig:bkg_sys_tables}
 \end{figure}
 
+\begin{subsection}{\Nb distribution with NLO Precision}
+
+As the nominal \Nb distribution shape is generated at LO precision, it is important to verify that the size of NLO effects is small and covered the experimental uncertainties.
+To do this, the \Nb distributions of \ttbar samples generated at LO precision with the default \MGatNLO~2.2.2 and generated at NLO precision with \POWHEG~2.0 are compared after the baseline selection.
+In order to evaluate only the shape differences between the two samples, the normalization of the \MGatNLO sample is scaled to match that of the \POWHEG sample.
+The comparison of the two distributions, shown in Figure~\ref{fig:nlo_nb_comparison}, is conducted in bins of \Njets and indicates a disagreement of about $5\%$.
+
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.30\columnwidth]{fig/nlo_comparison_lownjet.pdf}
+\includegraphics[angle=0,width=0.30\columnwidth]{fig/nlo_comparison_mednjet.pdf}
+\includegraphics[angle=0,width=0.30\columnwidth]{fig/nlo_comparison_highnjet.pdf}
+\end{center}
+\caption{Comparison of the \Nb distribution for a sample generated at LO precision with \MGatNLO~2.2.2 (blue histogram) with that of one generated at NLO precision with \POWHEG~2.0 (data points).
+The comparison is done after the baseline selection and in bins of $4 \leq \Njets \leq 5$ (left), $6 \leq \Njets \leq 7$ (middle), and $\Njets \geq 8$ (right).
+In order to evaluate only shape differences, the \MGatNLO sample is normalized to match the normalization of the \POWHEG sample.}
+\label{fig:nlo_nb_comparison}
+\end{figure}
+
+Given the level of agreement between the two samples, the \MGatNLO sample is used in this analysis as the sample size is significantly larger than that for the \POWHEG sample.
+
+\end{subsection}
+
 \end{section}
 
 \begin{section}{Signal Systematics}
@@ -274,11 +297,7 @@ $8.0 \pm 0.5\%$ & $8.1 \pm 0.4\%$ & $7.5 \pm 1.5\%$ \\ \hline
 %TO DO
 % 1. Check plot aesthetics since taken from AN, e.g. Preliminary -> Simulation
 % 2. Gluon splitting shape plot with better range. (Check analysis/CWR comments or early version of paper).
-% 3. Are categories GS -> qq -> 2 b-tagged jets or GS -> bb -> 2 b-tagged jets, etc
-% 4. Add finer binned gs fit results plot.
-% 5. Add plots for b-tag SF variation in ttbar
-% 6. Expand ``other systematics'' section by going into detail about the lepton fake rate.
-% 7. Use updated table for bkg sys that has the total uncertainty row.
-% 8. Expand insensitivity on the pileup dependence with CWR explanation of why it doesn't matter.
-% 9. Expand SF systematic section by discussing the Run split SFs.
-% 10. Define \dR if not defined earlier in the document.
+% 3. Add finer binned gs fit results plot.
+% 4. Use updated table for bkg sys that has the total uncertainty row.
+% 5. Expand insensitivity on the pileup dependence with CWR explanation of why it doesn't matter.
+% 6. Define \dR if not defined earlier in the document.
