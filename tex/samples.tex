@@ -6,7 +6,7 @@ This is a subset of the 40.8~\ifb delivered by the LHC and selected to correspon
 A plot of the cumulative delivered and recorded integrated luminosity by the LHC and CMS, respectively, is shown in~\ref{fig:lumi_2016}. 
 
 The data samples used in this analysis are shown in Table~\ref{tab:data_samples}.
-The \texttt{JetHT} datasets are primarilly used to populate the analysis search region with events, while the \texttt{Single Electron} and \texttt{Single Muon} datasets are primarilly used for trigger efficiency studies.
+The \texttt{JetHT} datasets are primarily used to populate the analysis search region with events, while the \texttt{Single Electron} and \texttt{Single Muon} datasets are primarily used for trigger efficiency studies.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -60,7 +60,7 @@ The corresponding integrated luminosity is 35.9~\ifb.}
 
 \begin{section}{Monte Carlo Simulation}
 
-Monte Carlos simulations (MC) are used to model both SM and BSM physics processes and are extremely useful in the design and optimization of the analysis stategy of new physics searches.
+Monte Carlo simulations (MC) are used to model both SM and BSM physics processes and are extremely useful in the design and optimization of the analysis stategy of new-physics searches.
 These simulated samples allow for studying processes that in data would have control regions with impure and/or small sample sizes or, in the case of signal processes, may not even exist.
 This allows for both the optimization and validation of the (signal-plus-)background prediction methods, as the sensitivity of the analysis to particular signal models can be estimated and pathologies in the prediction methodology can be unearthed and investigated.
 Additionally, the simulated samples can be used to help commision and understand the collected data by comparing expectations from simulation to what is actually observed, particularly in the initial data taking periods.
@@ -70,7 +70,6 @@ Additionally, the simulated samples can be used to help commision and understand
 The \MGatNLO~2.2.2 event generator is used in leading-order (LO) mode~\cite{Alwall:2014hca,Alwall:2007fs} to generate the
 \ttbar, quantum chromodynamics multijet (QCD), \Wjets and Drell--Yan background processes with extra partons, while the \ttW, \ttZ, \tttt, and $t$-channel single top quark production backgrounds are generated with \MGatNLO~2.2.2 in next-to-leading order (NLO) mode~\cite{Frederix:2012ps}.
 The \POWHEG~2.0 event generator~\cite{Nason:2004rx,Frixione:2007vw,Alioli:2010xd} is used to generate the $\mathrm{tW}$, $\mathrm{\bar{t}W}$, and $s$-channel single top quark processes at NLO precision.
-Comparisons between a sample generated at \MGatNLO~2.2.2 in LO mode and generated with \POWHEG~2.0 at NLO show that the NLO effects do not have a significant impact.
 
 The \ttbar, \Wjets, and QCD samples are generated with up to 2, 4, and 2 extra partons, respectively, and all samples are generated using a top quark mass of $172.5~\GeV$ and with the NNPDF3.0 set of parton distribution functions (PDF)~\cite{Ball:2014uwa}.
 For the fragmentation and showering of partons, the generated samples are interfaced with \PYTHIA~8.205~\cite{pythia8.2} and use the CUETP8M1 tune to describe the underlying event~\cite{Skands2014}.
@@ -150,7 +149,7 @@ WZTo3LNu\_TuneCUETP8M1\_13TeV-powheg-pythia8                                  & 
 \begin{subsection}{Signal Samples}
 
 For ease of generation and interpretation, signal samples are produced according to the Simplifed Model Spectra (SMS) paradigm~\cite{Alwall:2008ag,Alves:2011wf}, where all but one or two mass parameters in a particular decay chain are fixed.
-Due to their ``simplicity'', SMS models can interpreted generally, reducing the sensitivity of results to model specifics and allowing for results to be applicable to a wide variety of new-physics models.
+Due to their ``simplicity'', SMS models can be interpreted generally, reducing the sensitivity of results to model specifics and allowing for results to be applicable to a wide variety of new-physics models.
 Additionally, the use of SMS models results in signficantly reduced computing time for model generation, as models need to be produced by scanning across at most only two parameters.
 
 The assumpations used in the simplified model of the \rpvDecay process, denoted as T1tbs, are given below:
