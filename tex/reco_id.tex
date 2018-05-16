@@ -10,7 +10,7 @@ In this step, signals in both the pixel and strip channels that are above some z
 
 Next, tracks are reconstructed from these hits in order to provide estimates for the momentum and position of charged particles associated with the track.
 This is done using specialized software based on Kalman filters known as Combinatorial Track Finder (CTF).
-In order to reduce the combinatorial complexity of the problem, the CTF track reconstruction is peformed six times. 
+In order to reduce the combinatorial complexity of the problem, the CTF track reconstruction is performed six times. 
 Each iteration attempts to reconstruct the most easily-identifiable tracks, e.g. high-\pT tracks, and then removes the hits associated with those tracks.
 This helps simplify the track reconstruction in the following iterations.
 
@@ -19,7 +19,7 @@ Each iteration consists of four steps:
 \item A seed is generated from a few (generally 2 or 3) hits. 
 This seed provides an initial estimate of the trajectory and uncertainties associated with thet track.
 \item A Kalman-based track finder is used to extrapolate seed trajectories along their expected paths. Additional hits that are compatabile with a path are assigned to that track candidate.
-\item A track-fitting module uses a Kalaman filter and smoother to provide estimates of the trajectory parameters for each track.
+\item A track-fitting module uses a Kalman filter and smoother to provide estimates of the trajectory parameters for each track.
 \item A track selection sets quality thresholds and discards tracks that fail the specified criteria.
 \end{enumerate}
 
@@ -73,7 +73,7 @@ By correlating measurements from the tracker and calorimeter, the PF algorithm i
 
 \begin{subsection}{Linking}
 
-As a particle transverses through the CMS detector, it is expected to generate multiple input elements to the PF algorithm.
+As a particle traverses through the CMS detector, it is expected to generate multiple input elements to the PF algorithm.
 Thus, the first step of reconstructing particles is to ``link'' the various PF elements stemming from different subdetectors together.
 This is done by defining a ``distance'' between two linked elements, where the closer the distance the more probable it is the two elements correspond to the same particle.
 The linking algorithm then creates ``PF blocks'' by associating directly or indirectly linked elements together.
@@ -130,7 +130,7 @@ The excess ECAL energy is preferentially given to photons over neutral hadrons, 
 
 \begin{section}{Leptons}
 
-As the identification criteria for selecting PF electrons and PF muons are weak, these object serve as candidate particles. 
+As the identification criteria for selecting PF electrons and PF muons are weak, these objects serve as candidate particles. 
 To increase the purity of true electrons/muon, more stringent criteria must be passed for a PF electron/muon to be considered an analysis-level electron/muon.
 The number of analysis-level leptons, where a lepton is defined as either an electron or muon, is denoted as \Nleps.
 
@@ -143,17 +143,17 @@ This criteria is shown in Table~\ref{tab:electron_id}, where $\sigma_{i\eta i\et
 \centering
 \begin{tabular}{l|cc}
 \hline \hline
-Criteria                                 &  Barrel requirement  & Endcap requirement \\
+Criteria                                          &  Barrel requirement  & Endcap requirement \\
 \hline
-$\sigma_{i\eta i\eta}$                   &  $< 0.0101$          &  $< 0.0283 $       \\
-$\Delta\eta\mrm{(cluster,track)}$        &  $< 0.0103$          &  $< 0.07333$       \\
-$\Delta\phi\mrm{(cluster,track)}$        &  $< 0.0336$          &  $< 0.114  $       \\
-$E_{hadronic}/E_{electronmagnetic}$      &  $< 0.876 $          &  $< 0.0678 $       \\
-$\frac{1}{E} - \frac{1}{p}~[\GeV^{-1}]$  &  $< 0.0174$          &  $< 0.0898 $       \\
-$|d_0|$~[mm]                             &  $< 0.0118$          &  $< 0.0739 $       \\
-$|d_z|$~[mm]                             &  $< 0.373 $          &  $< 0.602  $       \\
-Missing hits                             &  $\leq 2  $          &  $\leq 1   $       \\
-Pass photon conversion                   & True                 & True               \\
+$\sigma_{i\eta i\eta}$                            &  $< 0.0101$          &  $< 0.0283 $       \\
+$\Delta\eta\mrm{(cluster,track)}$                 &  $< 0.0103$          &  $< 0.07333$       \\
+$\Delta\phi\mrm{(cluster,track)}$                 &  $< 0.0336$          &  $< 0.114  $       \\
+$E_{\text{hadronic}}/E_{\text{electromagnetic}}$  &  $< 0.876 $          &  $< 0.0678 $       \\
+$\frac{1}{E} - \frac{1}{p}~[\GeV^{-1}]$           &  $< 0.0174$          &  $< 0.0898 $       \\
+$|d_0|$~[mm]                                      &  $< 0.0118$          &  $< 0.0739 $       \\
+$|d_z|$~[mm]                                      &  $< 0.373 $          &  $< 0.602  $       \\
+Missing hits                                      &  $\leq 2  $          &  $\leq 1   $       \\
+Pass photon conversion                            & True                 & True               \\
 \hline \hline
 \end{tabular}
 \caption{Identification criteria that a PF electron must pass in order to be considered an analysis-level electron.}
@@ -172,7 +172,7 @@ R^{\text{mini-iso}} &=\begin{cases} 0.2, &
 \end{cases}
 \end{align}
 
-The \pT-dependent cone size reduces the rate of accidental overlaps between the electron and jets in high-multiplicity or highly Lorentz-boosted events and in particular overlaps between bottom quark jets and leptons originating from a boosted top quark.
+The \pT-dependent cone size reduces the rate of accidental overlaps between the electron and jets in high-multiplicity events or highly Lorentz-boosted decays and in particular overlaps between bottom quark jets and leptons originating from a boosted top quark.
 Relative isolation is computed as $I^{\mrm{rel}} = I_{\mrm{mini}}/\pT$ after subtraction of the average contribution from additional proton-proton collisions in the same bunch-crossing (pileup).
 To be considered isolated, electrons must satisfy $I^{\mrm{rel}} < 0.1$.
 
@@ -181,7 +181,8 @@ The combined efficiency for the electron reconstruction, identification, and iso
 \begin{figure}[tbp!]
 \centering
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/electron_eff.pdf}
-\caption{The efficiency to select an analysis-level electron as a function of $\pT$ and $\eta$.}
+\caption{The efficiency to select an analysis-level electron as a function of $\pT$ and $\eta$.
+The low efficiency for $1.442 \leq |\eta| < 1.556$ corresponds to the ECAL ``crack'' region, the boundary between the EB and EE, in which electron reconstruction is particularly difficult.}
 \label{fig:electron_eff}
 \end{figure}
 
@@ -248,22 +249,21 @@ This process proceeds sequentially and ends when some threshold condition is met
 In particular, the distance measures, $d_{ij}$, which is the distance between two entities (particles or psuedojets), and $d_{iB}$, which is the distance between an entity and the beam, are often defined to be
 
 \begin{equation}
-d_{ij} = \mrm{min}(p_{\mrm{T}i}^{2p},p_{\mrm{T}j}^{2p})\frac{\Delta R_{ij}^{2}}{R^2},
+d_{ij} = \mrm{min}(p_{\mrm{T}i}^{2n},p_{\mrm{T}j}^{2n})\frac{\Delta R_{ij}^{2}}{R^2},
 \label{clustering_dij}
 \end{equation}
 
 \begin{equation}
-d_{iB} = p_{\mrm{T}i}^{2p},
+d_{iB} = p_{\mrm{T}i}^{2n},
 \label{clustering_diB}
 \end{equation}
-
-where $\Delta R_{ij}^{2} = \Delta \eta_{ij}^{2} + \Delta \phi_{ij}^2$, $R$ is the jet radius parameter that sets the scale of the jet's size, and $p$ is a parameter of the algorithm.
+where $\Delta R_{ij}^{2} = \Delta \eta_{ij}^{2} + \Delta \phi_{ij}^2$, $R$ is the jet radius parameter that sets the scale of the jet's size, and $n$ is a parameter of the algorithm.
 The clustering procedure then proceeds by finding the smallest of the distances, and if it is a $d_{ij}$, the two entities $i$ and $j$ are merged, while if it is a $d_{iB}$, entity $i$ is called a jet and is removed from the clustering list.
 
-The parameter $p$ determines the clustering order of the algorithm and thus different choices for the value of $p$ lead to different clustering algorithms.
-For $p = 1$, the clustering follows the \kT algorithm~\cite{Ellis:1993tq}, which prioritizes clustering softer particles first.
-Setting $p = 0$, reproduces the Cambridge-Aachen algorithm~\cite{Dokshitzer:1997in}, which uses energy-independent clustering, relying only on the spatial distances between particles.
-Lastly, choosing $p = -1$, gives the anti-\kT algorithm~\cite{Cacciari:2008gp}, which favors using the harder particles as the jet seeds and then clustering around them.
+The parameter $n$ determines the clustering order of the algorithm and thus different choices for the value of $n$ lead to different clustering algorithms.
+For $n = 1$, the clustering follows the \kT algorithm~\cite{Ellis:1993tq}, which prioritizes clustering softer particles first.
+Setting $n = 0$, reproduces the Cambridge-Aachen algorithm~\cite{Dokshitzer:1997in}, which uses energy-independent clustering, relying only on the spatial distances between particles.
+Lastly, choosing $n = -1$, gives the anti-\kT algorithm~\cite{Cacciari:2008gp}, which favors using the harder particles as the jet seeds and then clustering around them.
 A more detailed discussion of jets, including a comparison of these and other clustering algorithms can be found in Reference~\cite{Salam:2009jx}.
 
 \end{subsection}
@@ -305,8 +305,8 @@ Chaged hadron fraction            &  $> 0$       \\
 
 \begin{subsection}{b-tagging}
 
-Jets that are formed through b-quark hadronization have many unique properties that allow them to be differentiated from jets formed through other quarks or gluons.
-This abiilty to ``b-tag'' jets is a very useful tool for determining what physics processes occured in an event, as b~quarks are associated with specific physics process, such as top quark decays.
+Jets that are formed through b-quark hadronization have several unique properties that allow them to be differentiated from jets formed through other quarks or gluons.
+This ability to ``b-tag'' jets is a very useful tool for determining what physics processes occured in an event, as b~quarks are associated with specific physics process, such as top quark decays.
 Similarly, many SUSY scenarios, where naturalness considerations motivate light third-generation squarks, result in either the direct or indirect production of b~quarks through the decay of SUSY particles.
 Thus, b-tagging jets is not only often a crucial component to reducing backgrounds from processes where no b~quarks are expected, but also a powerful selector for potential signal events. 
 
@@ -329,8 +329,8 @@ A selection of the variables used that have high discrimination are listed below
 \item The 3D impact parameter of soft leptons associated with the jet
 \end{itemize}
 
-These variables are then fed into a multilayer perceptron with one hidden layer then outputs a score between 0 and 1, indicating the likelihood the jet is a b-quark jet.
-The distribution of CSVv2 disciminator values for different flavor jets is shown in Figure~\ref{fig:csv_discriminator}.
+These variables are then fed into a multilayer perceptron with one hidden layer that outputs a score between 0 and 1, indicating the likelihood the jet is a b-quark jet.
+The distribution of CSVv2 discriminator values for different flavor jets is shown in Figure~\ref{fig:csv_discriminator}.
 
 \begin{figure}[tbp!]
 \centering
@@ -340,7 +340,7 @@ Jets are selected from \ttbar events and required to have $\pT > 20~\GeV$~\cite{
 \label{fig:csv_discriminator}
 \end{figure}
 
-A threshold score for b-tagging a jet is chosen such that the mis-tag rate for light-flavor jets is 1\%.
+A threshold score of 0.8484 is used to b-tag a jet and is chosen such that the mis-tag rate for light-flavor jets is 1\%.
 This corresponds to a mis-tag rate for c-quark jets of 13--15\% (11--13\%) in the barrel (endcap) and a tagging efficiency for b~jets of 60--67\% (51--57\%) in the barrel (endcap) for jets with \pT between $30$-$50~\GeV$.
 The tagging efficiency increases with \pT before decreasing to $\approx 50\%$ for jets above $150~\GeV$.
 The b-tagging efficiency as a function of jet \pT is shown in Figure~\ref{fig:btag_eff}.
@@ -362,7 +362,7 @@ The number of b-tagged jets in an event is denoted as \Nb.
 
 \begin{section}{Large-radius Jets}
 
-While the distance parameter of \smallR jets is optimized for clustering the hadronization products of a single parton, it is often useful to exploit information of physical processes on scale larger than a single jet, such as top quark or W boson decays.
+While the distance parameter of \smallR jets is optimized for clustering the hadronization products of a single parton, it is often useful to exploit information of physical processes on a scale larger than a single jet, such as top quark or W boson decays.
 One way to capture this information is to cluster jets with a large distance parameter, which encodes the momentum, angular, and multiplicity information of the partons contained in this larger jet.
 
 In particular, this analysis constructs these ``\largeR'' jets by clustering ``\smallR'' jets with a distance parameter of $R = 1.2$.
@@ -378,7 +378,7 @@ For example, this helps reduce the difference between \largeR jets formed by clu
 
 This technique of clustering \smallR jets into \largeR jets has been used previously by both the ATLAS and CMS collaborations, e.g. References~\cite{Aaboud:2017aeu,Khachatryan:2016uwr}.
 
-\begin{subsection}{\MJ}
+\begin{subsection}{\MJ\,--- The Sum of Large-radius Jet Masses}
 \label{subsec:MJ}
 
 A measure of the mass-scale of an event, \MJ, can be constructed by summing the masses of large-radius jets, defined as
@@ -390,7 +390,7 @@ where $m(J)$ is the mass of a single \largeR jet.
 The quantitity \MJ has significant discriminating power between SM background processes and signal processes, as SM events tend to have significantly lower mass-scales than signal events that involve high mass particles.
 For example, \MJ in events with only a produced \ttbar pair is limited to be $\lesssim 2m_{top} \approx 350~\GeV$.
 This is because the top quarks decay back-to-back and if each top quark's decay products are captured in a single \largeR jet, two \largeR jets are clustered each with $m(J) = m_{top}$, resulting in $\MJ = 2m_{top}$.
-In the case, where a top quark is not fully contained in a \largeR jet, the mass of that \largeR jet, and correspondingly \MJ, is even smaller.
+In the case where a top quark is not fully contained in a \largeR jet, the mass of that \largeR jet, and correspondingly \MJ, is even smaller.
 For signal events, however, the mass-scale is roughly set by the gluino mass, which is on the order of $1~\TeV$.
 
 The \MJ distribution in \ttbar and signal events with $\mglu = 1000~\GeV$ and $1600~\GeV$, selected with a $\Njets \geq 8$ requirement to ensure both processes have similar \Njets distributions, is shown in Figure~\ref{fig:mj_distributions}. 

@@ -56,7 +56,7 @@ The overall shape of the detector is cylindrical with a length of $21.6~\m$ and 
 The CMS detector is sometimes called a cylindrical onion, as its shape is constructed through layers of specialized detectors, each designed to provide precise measurements for a particular particle type.
 Peeling back the layers from the outside-in, the first sub-detector is the muon system. 
 Next is a superconducting solenoid of $6~\m$ internal diameter that produces a magnetic field of $3.8~\mrm{T}$, and perhaps most importantly provides the ``S'' in CMS.
-Placed within the solenoidal magnet, is the rest of the CMS detector, namely the Hadronical Calorimeter (HCAL), Electromagnetic Calorimeter (ECAL), and a silicon tracker.
+Placed within the solenoidal magnet, is the rest of the CMS detector, namely the Hadron Calorimeter (HCAL), Electromagnetic Calorimeter (ECAL), and a silicon tracker.
 The design challenge of compactly fitting most of the detector components within the solenoid is responsible for the ``C'' in CMS.
 A diagram of the layout of the CMS detector can be seen in Figure~\ref{fig:cms_detector}.
 
@@ -74,7 +74,7 @@ The $z$-axis points along the beamline with the positive direction given by the 
 Due to the CMS detector shape, it is often useful to convert the cartesian coordinates to a cylindrical coordinate system.
 In this system, the azimuthal angle, $\phi$, is measured from the $x$-axis in the $xy$-plane, and the polar angle, $\theta$, is measured from the z-axis.
 The polar angle, however, is often replaced by psuedorapidity, defined as $\eta = -\ln(\theta/2)$.
-Thus, any point in the CMS coordinate system can be represented by $(z, \eta, \phi)$.
+Thus, any point in the CMS coordinate system can be represented by $(r, \eta, \phi)$.
 A diagram showing both the cartesian and cylindrical coordinate systems can be seen in Figure~\ref{fig:cms_coordinate_system}.
 
 The remainder of this section briefly describes the main features of the various CMS sub-detectors.
@@ -91,7 +91,7 @@ A detailed discussion can be found in Reference~\cite{Chatrchyan:2008aa}.
 \begin{subsection}{Inner Tracking System}
 
 The tracking system is used for precise measurements of the trajectories of charged particles, as well as reconstruction of seconday vertices.
-As the tracking system is the closest subdetector to the interaction point, it faces a very large particle flux rate and so must be able to provide both high granularity and fast response, as well be able to survive operating in those conditions with ane expected lifetime of 10 years.
+As the tracking system is the closest subdetector to the interaction point, it faces a very large particle flux rate and so must be able to provide both high granularity and fast response, as well be able to survive operating in those conditions with an expected lifetime of 10 years.
 At the same time, these features must be balanced with minimizing the amount of material in order to reduce unwanted interactions with the detector, such as multiple scattering, photon conversion, and nuclear interactions.
 These requirements lead to a tracking system composed entirely of silicon technology.
 
@@ -131,11 +131,10 @@ The resulting resolution on the energy measurements is given by
 \label{eq:ecal_resolution}
 \frac{\sigma}{E} = \frac{S}{\sqrt{E}} \oplus \frac{N}{E} \oplus C
 \end{equation}
-
 where $S$ is the stochastic term, $N$ the noise term, $C$ the constant term, and $E$ is in units of \GeV.
 Typical values for $S$, $N$, and $C$, as measured in electron beam tests, are 2.8\%, 12\%, and 0.30\%, repectively.
 
-In addition to the ECAL barrel and endcaps is a preshower detector, which sits in front of the endcaps, convering $1.653 < |\eta| < 2.6$.
+In addition to the ECAL barrel and endcaps is a preshower detector, which sits in front of the endcaps, covering $1.653 < |\eta| < 2.6$.
 The main purpose of the preshower detector is to identify neutral pions by improving the granularity, so as to be able resolve photon pairs from the decay of high energy pions that otherwise would be mismeasured as single photons. 
 The preshower detector also provides improved position resolution for electrons and photons and helps identify electrons from minimium ionizing particles.
 The full layout of the ECAL is shown in Figure~\ref{fig:cms_ecal}.
@@ -156,7 +155,7 @@ The full layout of the ECAL is shown in Figure~\ref{fig:cms_ecal}.
 The primary purpose of the hadronic calorimeter (HCAL) is to measure the energy of hadrons, which can pass through the ECAL as they primarilly interact through the strong force.
 The HCAL is a sampling calorimeter made up of either brass, iron, or steel absorbers and uses plastic scintillator tiles as the sampling material, which measures the energy of hadrons through scintillation, similarly to the ECAL.
 As a hadron travels through the HCAL, it interacts with one of the absorber layers, which results into a ``shower'' of particles that produces light in the scintillator tiles as the resulting particles pass through the sampling layers.
-These light pulses are converted to electrical signals by optical fibers, which when summed have an amplitue proportional to the hadron's energy. 
+These light pulses are carried by wavelength-shifting fibers to a hybrid photodiode, which converts the pulses to analog electrical signals that when summed have an amplitude proportional to the hadron's energy. 
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -176,7 +175,7 @@ The HF is used to measure the energy of the forward most hadrons in the pseudora
 At this forward position, the HF faces extradorinary levels of particle flux and had to be designed to handle this radiation.
 Due to this constraint, the HF uses quartz fibers instead of plastic scintillator tiles as its active medium, as the quartz fiber are more radiation hard.
 The HF uses both long fibers, which run the full depth ($165~\cm$) of the detector, and short fibers, which begin $22~\cm$ from the front end of the detector.
-This geometry allows the HF to provide depth information of the energy deposits, which helps to identify electron and photons from hadrons, as the former tends to deposit most of its energy in the first depth, while the latter deposits its energy more equally between the two depths.
+This geometry allows the HF to provide depth information of the energy deposits, which helps to identify electrons and photons from hadrons, as the former tends to deposit most of its energy in the first depth, while the latter deposits its energy more equally between the two depths.
 These fibers are embedded into the steel structure of the HF, which also acts as the absorber.
 
 Lastly is the HO, whose main purpose is to act as a ``tail catcher''. 
@@ -208,7 +207,7 @@ Instead, the muon system endcaps are instrumented with cathode strip chambers (C
 The CSCs have 4 stations in each endcap with chambers that are aligned perpendicular to the beam line and are able to provide measurements in the $r$-$\phi$ plane and $z$-direction, along with the beam crossing time of a muon.
 
 Both the DTs and CSC are capable of providing high efficiency and pure muon \pT triggers, independent of the rest of the detector.
-But in order to further improve this, particularly at the full LHC luminosity, another complementary trigger system consisting of Resisitive Plate Chambers (RPCs) was added to both the the barrel and endcap regions ($|\eta| < 1.6$).
+But in order to further improve this, particularly at the full LHC luminosity, another complementary trigger system consisting of Resisitive Plate Chambers (RPCs) was added to both the barrel and endcap regions ($|\eta| < 1.6$).
 The RPCs are double-gap chambers that operate with a fast response and good time resolution.
 The spatial resolution, however, is coarser than the DTs or CSCs, though the extra hits in the RPC still help resolve ambiguities when making tracks.
 There are a total of 6 RPC layers in the barrel muon system, which help improver triggers for low \pT muons, and 3 layers in each of the endcaps that help reduce background and improve the time and \pT resolution of muons.
@@ -217,14 +216,14 @@ There are a total of 6 RPC layers in the barrel muon system, which help improver
 
 \begin{subsection}{Trigger System}
 
-The high instantaneous luminosity of the LHC provides many techincal challenges for the data aquisition system (DAQ), with proton-proton collissions occuring every $25~\ns$, corresponding to a frequency of $40~\mrm{MHz}$. 
+The high instantaneous luminosity of the LHC provides many techincal challenges for the data aquisition system (DAQ), with proton-proton collisions occuring every $25~\ns$, corresponding to a frequency of $40~\mrm{MHz}$. 
 At this collision rate, it is unfeasible to process and store the data for each event.
 In order to reduce the rate, a two-stage trigger system is used to select only the most ``interesting'' events for processing.
 
 The first stage is the Level-1 (L1) trigger system, which has approximately only $4~\mus$ to decide whether or not an event should be further processed. 
 In order to operate at this timescale, the L1 trigger uses only coarse-grained information from the CMS calorimeters and the muon system.
 
-For the calorimeter set of data, the L1 first generates trigger primitives by looking for large energy deposits in the calorimter.
+For the calorimeter set of data, the L1 first generates trigger primitives by looking for large energy deposits in the calorimeter.
 These trigger primitives are then passed to the Regional Calorimeter Trigger (RCT), which uses this information to determine electron/photon candidates and transverse energy sums per calorimeter region.
 In addition, the RCT also calculates information relevant for detecting minimally ionizing particles, vetoing tau leptons, and muon isolation.
 Lastly, the Global Calorimeter Trigger (GCT) uses the information from the RCT to construct jets and calculate the event-level transverse energy and missing transverse energy, along with the final isolated and non-isolated electron/photon candidates.
@@ -250,7 +249,7 @@ On the generation of an L1A, all the CMS subsystems read out the buffered data c
 The data the event builder receives is both more complete and at a finer resolution, allowing it to construct more complex quantities before sending it to the High Level Trigger (HLT), the second stage of the trigger system.
 
 The HLT software is run on a processor farm that reconstructs events in greater detail to decide whether or not they should be kept.
-This framework is flexible alloweing both the HLT software and the processor farm to be updated in order to meet changing experimental needs.
+This framework is flexible allowing both the HLT software and the processor farm to be updated in order to meet changing experimental needs.
 As such the exact criteria used by the HLT in its decision varies with time, but generally involves thresholding the \pT and/or multiplicity of particles along with event-level quantities.
 At the end of this process, the trigger rate is approximately $100~\mrm{Hz}$.
 
