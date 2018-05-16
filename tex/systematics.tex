@@ -1,4 +1,5 @@
 \chapter{Systematic Uncertainties}
+\label{chap:systematics}
 
 The nominal simulated shape of the \Nb distribution is allowed to vary by the inclusion of systematic uncertainties.
 Each uncertainty is incorporated in the fit with template \Nb histograms to account for the effects of the systematic variation and a nuisance parameter $\theta$ to control the variation amplitude.
@@ -7,7 +8,7 @@ These uncertainties affect only the \Nb shape for \ttbar, QCD, and W+jets backgr
 
 \begin{section}{Gluon Splitting Rate}
 
-The primary source of systematic uncertainty is on the modelling of the rate of gluon splitting, as events with a gluon splitting to \bbbar provide an additional source of b quarks in events.
+The primary source of systematic uncertainty is on the modelling of the rate of gluon splitting (GS), as events with a gluon splitting to \bbbar provide an additional source of b quarks in events.
 As this process may not be properly simulated, constraining the splitting rate in data is crucial for establishing a robust prediction of the \Nb distribution.
 The dominant contribution of this effect is due to gluons that split specifically to b~quark pairs, so the phrase ``gluon splitting'' will hereafter refer exclusively to gluon splitting to \bbbar.
 One way to select a data sample enriched in gluon splitting events is to use the \dRbb distribution, where \dRbb is defined as the $\Delta R$ between two b-tagged jets, as pairs of b-tagged jets resulting from the same gluon splitting tend to have smaller values of \dRbb than pairs resulting from hard scatter b-quarks or fakes.
@@ -36,9 +37,9 @@ The relative fractions of these contributions is shown in Figure~\ref{fig:gs_cat
 \label{fig:gs_categories}
 \end{figure}
 
-The gluon splitting rate is the constrained by fitting the \dRbb distribution by using the difference in shapes of the GSbb, GSb, and noGS categories.
-This fit varies the normalization of the GSbb and GSb (varied together) and the noGS contributions in order to extract the relative contributions of events with and without a gluon splitting.
-It is performed in four equal bins in the range of $0 \leq \dRbb < 4.8$ with events selected by requiring $\Nleps = 0$, $\HT > 1500\GeV$, $\Nb = 2$, $\Njets \geq 4$, and $\MJ > 500~\GeV$ as the gluon splitting signal in a $\Nleps = 1$ control sample is contaminated by b~quarks from the decay of top quarks.
+The gluon splitting rate is then constrained by fitting the \dRbb distribution by using the difference in shapes of the GSbb, GSb, and noGS categories.
+This fit varies the normalization of the GSbb and GSb contributions (varied together) and the noGS contributions in order to extract the relative contributions of events with and without a gluon splitting.
+It is performed in four equal bins in the range of $0 \leq \dRbb < 4.8$ with events selected by requiring $\Nleps = 0$, $\HT > 1500~\GeV$, $\Nb = 2$, $\Njets \geq 4$, and $\MJ > 500~\GeV$ as the gluon splitting signal in a $\Nleps = 1$ control sample is contaminated by b~quarks from the decay of top quarks.
 Additionally, the $\Nleps = 0$ control sample is formed from a subset of the data that is selected to be most stable in the b~tagging algorithm performance, since the precision of the \dRbb fit is not limited by the data sample size.
 This choice isolates the physical effects of gluon splitting from the potential time dependence of the b~tagging performance due to variations in experimental conditions, which are separately incorporated by the b-tag scale factor uncertainties.
 % WHY NLEPS=0 region also works for NLEPS=1
@@ -71,7 +72,7 @@ Event yields are normalized to that expected in $35.9~\ifb$ of data.}
 \end{figure}
 
 In order to test the stability of the fit results and the dependence of the gluon splitting weights across kinematic regions, the \dRbb fit is repeated both with a higher \MJ threshold and with different \Njets bins. 
-The resulting weights are shwon in Table~\ref{tab:gs_kinematic_bins} and are all consistent with those of the nominal fit.
+The resulting weights are shwon in Table~\ref{tab:gs_variations} and are all consistent with those of the nominal fit.
 
 \begin{table}[tb!]
 \setlength\tabcolsep{3pt}
@@ -83,7 +84,7 @@ GS    & $0.77 \pm 0.09$ & $0.70 \pm 0.38$ & $ 0.80 \pm 0.32$  & $ 0.76 \pm 0.14$
 No GS & $1.21 \pm 0.08$ & $1.28 \pm 0.35$ & $ 1.15 \pm 0.26$  & $ 1.22 \pm 0.13$ & $ 1.24 \pm 0.15$  & $ 1.05 \pm 0.36$ \\
 \end{tabular}
 \caption{Gluon splitting weights derived in the nominal fit, a variation with a requirement of $\MJ > 800~\GeV$, and 4 variations in bins of \Njets (with the nominal $\MJ > 500~\GeV$ requirement.)}
-\label{tab:GS_variations}
+\label{tab:gs_variations}
 \end{table}
 
 \end{section}
@@ -109,11 +110,11 @@ This sample is selected through a series of triggers that require at least one j
 The probability to tag a charm-flavor jet (c jet) is determined by measurements in two charm-enriched control regions.
 The first control region is formed by selecting events in which a charm quark is produced in association with a W boson.
 The main contributions to this process is from $\mrm{s} + \mrm{g} \to \mrm{W^{-}} + \mrm{c}$ and $\mrm{\bar{s}} + \mrm{g} \to \mrm{W^{+}} + \mrm{\bar{c}}$, where a key property is that the W boson and quark have oppositely signed electrical charges.
-The dominant background is $\mrm{W} + \mrm{q\bar{q}}$ events, which are produce an equal amount of events with same- and opposite-signed W boson and quark pairs.
+The dominant background is $\mrm{W} + \mrm{q\bar{q}}$ events, which produce an equal amount of events with same- and opposite-signed W boson and quark pairs.
 Thus, this background is removed by measuring its contribution in the same-sign channel and the subtracting it from the opposite-sign channel, resulting in a pure $\mrm{W} + \mrm{c}$ channel.
 The second charm-enriched control region is created by selecting single-lepton \ttbar events.
 As hadronically-decaying W bosons decay to a charm quark about 50\% of the time, about one of two single-lepton \ttbar events will contain a charm quark.
-Finally, measurements in these two regions are combined using the best linear unbiased estimator (BLUE) method, described in Reference~\cite{LYONS1988110}.
+Finally, measurements in these two regions are combined using the best linear unbiased estimator (BLUE) method described in Reference~\cite{LYONS1988110}.
 
 The probability to tag a b-flavor jet (b jet) is computed using QCD and \ttbar control regions.
 The QCD control regions are enriched in b quarks by requiring that at least one jet contains a muon with $\pT > 5~\GeV$, which takes advantage of the high branching fraction to leptons of b hadrons.
@@ -131,13 +132,13 @@ A complete discussion of how the SF measurements are made can be found in Refere
 \end{center}
 \caption{The data-to-simulation scale factors for the tagging efficiency of b-flavor jets (top-left), charm-flavor jets (top-right), and light-flavor or gluon jets (bottom) are shown as a function of jet \pT.
 The associated uncertainty with each scale factor is shown as a blue hashed band.}
-\label{fig:bkg_sys_tables}
+\label{fig:btag_sfs}
 \end{figure}
 
 The systematic uncertainties on the \Nb shape are assessed by the $\pm 1$~s.d.\ \Nb templates resulting from varying the SFs according to their uncertainties.
 Because the b and c jet SFs have correlated uncertainties, they are conservatively varied together, creating one set of templates.
 The light-flavor SFs are uncorrelated with the b and c jet SFs and are varied independently.
-The effect of these variations on the \Nb distribution in \ttbar events is shown in Figure~\ref{fig:sf_bc_variations} and Figure~\ref{fig:sf_udsg_variations}.
+The effects of these variations on the \Nb distribution in \ttbar events are shown in Figure~\ref{fig:sf_bc_variations} and Figure~\ref{fig:sf_udsg_variations}.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -166,12 +167,12 @@ Event yields are normalized to that expected in $35.9~\ifb$ of data.}
 While the QCD normalization is measured from data, it is mostly constrained by the $\Nleps = 0$ selection and applied in a $\Nleps = 1$ region.
 If the simulated \Nleps distribution is not modelled perfectly, there may be residual differences between the normalizations of these two regions.
 For processes that have true prompt leptons, such as \ttbar and \Wjets, the \Nleps distribution is well modelled, because the dominant effects are the W branching fractions and the acceptance (including selection efficiency), both of which are well understood. 
-For QCD, however, this is less well modelled as the simulation of the tail of the jet fragmentation function as well as detector effects that can produce fake leptons are not as well understood.
+For QCD, however, this is less well modelled as the simulation of the tail of the jet fragmentation function, as well as detector effects that can produce fake leptons, are not as well understood.
 
 To assign a systematic uncertainty on the modelling of the ratio of 0-lepton to 1-lepton events in QCD, the lepton isolation distributions are studied.
 Figure~\ref{fig:lep_iso} shows the relative isolation distributions for eletrons (left) and muons (right) in a data sample corresponding to the control regions.
 The binning of the histograms are chosen such that the first bin corresponds to the relative isolation requirement for signal leptons (0.1 for electrons and 0.2 for muons).
-The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{sec:crfit}.
+The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{subsec:crfit}.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -180,7 +181,7 @@ The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match 
 \end{center}
 \caption{The relative isolation distribution for electrons (left) and muons (right) in the control region bins.
 The binning of the histograms are chosen such that the first bin corresponds to the relative isolation requirement for signal leptons (0.1 for electrons and 0.2 for muons).
-The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{sec:crfit}.}
+The normalizations of the QCD, \ttbar, and \Wjets processes are scaled to match the results of a control region fit described in Section~\ref{subsec:crfit}.}
 \label{fig:lep_iso}
 \end{figure}
 
@@ -234,9 +235,10 @@ These values are similar for other (\Njets, \MJ) bins.}
 \begin{subsection}{\Nb distribution with NLO Precision}
 
 As the nominal \Nb distribution shape is generated at LO precision, it is important to verify that the size of NLO effects is small and covered the experimental uncertainties.
-To do this, the \Nb distributions of \ttbar samples generated at LO precision with the default \MGatNLO~2.2.2 and generated at NLO precision with \POWHEG~2.0 are compared after the baseline selection.
+To do this, the \Nb distributions of \ttbar samples generated at LO precision with the default \MGatNLO~2.2.2 generator and samples generated at NLO precision with \POWHEG~2.0 are compared after the baseline selection.
 In order to evaluate only the shape differences between the two samples, the normalization of the \MGatNLO sample is scaled to match that of the \POWHEG sample.
-The comparison of the two distributions, shown in Figure~\ref{fig:nlo_nb_comparison}, is conducted in bins of \Njets and indicates a disagreement of about $5\%$.
+The comparison of the two distributions, shown in Figure~\ref{fig:nlo_nb_comparison}, is conducted in bins of \Njets and indicates a disagreement of only about $5\%$.
+This disagreement is small and subdominant to the experimental uncertainties previously discussed and no additional uncertainty is applied.
 
 \begin{figure}[tbp!]
 \begin{center}
