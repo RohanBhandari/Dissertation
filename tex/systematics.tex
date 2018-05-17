@@ -11,8 +11,8 @@ These uncertainties affect only the \Nb shape for \ttbar, QCD, and W+jets backgr
 The primary source of systematic uncertainty is on the modelling of the rate of gluon splitting (GS), as events with a gluon splitting to \bbbar provide an additional source of b quarks in events.
 As this process may not be properly simulated, constraining the splitting rate in data is crucial for establishing a robust prediction of the \Nb distribution.
 The dominant contribution of this effect is due to gluons that split specifically to b~quark pairs, so the phrase ``gluon splitting'' will hereafter refer exclusively to gluon splitting to \bbbar.
-One way to select a data sample enriched in gluon splitting events is to use the \dRbb distribution, where \dRbb is defined as the $\Delta R$ between two b-tagged jets, as pairs of b-tagged jets resulting from the same gluon splitting tend to have smaller values of \dRbb than pairs resulting from hard scatter b-quarks or fakes.
-This can be seen in Figure~\ref{fig:dRbb_shapes}, which shows the dRbb distribution in simulated QCD events with $\Nb = 2$ for three important categories:
+One way to select a data sample enriched in gluon splitting events is to use the \dRbb distribution, where \dRbb is defined as the $\Delta R$ between two b-tagged jets, as pairs of b-tagged jets resulting from the same gluon splitting tend to have smaller values of \dRbb than pairs resulting from hard scatter b-quarks or mis-tagged jets.
+This can be seen in Figure~\ref{fig:dRbb_shapes}, which shows the \dRbb distribution in simulated QCD events with $\Nb = 2$ for three important categories.
 Events that have a correlated pair of b-tagged jets originating from a gluon splitting (green, denoted GSbb) populate the low-\dRbb region, while events without gluon splitting (yellow, denoted noGS) or where the splitting yields zero one b-tagged jets (blue, denoted GSb) populate the low-and high-\dRbb regions roughly equally.
 
 \begin{figure}[tbp!]
@@ -72,7 +72,7 @@ Event yields are normalized to that expected in $35.9~\ifb$ of data.}
 \end{figure}
 
 In order to test the stability of the fit results and the dependence of the gluon splitting weights across kinematic regions, the \dRbb fit is repeated both with a higher \MJ threshold and with different \Njets bins. 
-The resulting weights are shwon in Table~\ref{tab:gs_variations} and are all consistent with those of the nominal fit.
+The resulting weights are shown in Table~\ref{tab:gs_variations} and are all consistent with those of the nominal fit.
 
 \begin{table}[tb!]
 \setlength\tabcolsep{3pt}
@@ -93,13 +93,13 @@ No GS & $1.21 \pm 0.08$ & $1.28 \pm 0.35$ & $ 1.15 \pm 0.26$  & $ 1.22 \pm 0.13$
 
 Another significant systematic uncertainty is the uncertainty in the data-to-simulation scale factors (SF) for b~tagging efficiency and mistag rates.
 Simulating the b-tagging algorithm relies on understanding the detailed behavior of the detector and also accurate modelling of the parton shower and hadronization, both of which are non-trivial.
-Therefore, it is important to to measure the b~tagging efficiencies and mistag rates in data and correct the simulation to match.
+Therefore, it is important to measure the b~tagging efficiencies and mistag rates in data and correct the simulation to match.
 
 The difference between data and simulation is corrected for by using a per jet data-to-simulation SF
 \begin{align}
 SF_{f} = \varepsilon^{data}_{f}(\pT)/\varepsilon^{sim.}_{f}(\pT).
 \end{align}
-where $\varepsilon^{data}_{f}(\pT)$ and $\varepsilon^{sim.}_{f}(\pT)$ are the tagging efficiencies for for a jet with flavor $f$ as a function of \pT in data and simulation, respectively.
+where $\varepsilon^{data}_{f}(\pT)$ and $\varepsilon^{sim.}_{f}(\pT)$ are the tagging efficiencies for a jet with flavor $f$ as a function of \pT in data and simulation, respectively.
 No dependence on $\eta$ is derived due to limited data sample sizes.
 In simulation, the efficiency is determined by matching jets to their generated hadron to determine their flavor and then measuring how many of those jets are correctly tagged.
 In data, this is done by using control regions determined by specific selection requirements that produce pure samples of a certain flavor of jets while not biasing the jets with respect to variables used in the b~tagging algorithm.
@@ -111,7 +111,7 @@ The probability to tag a charm-flavor jet (c jet) is determined by measurements 
 The first control region is formed by selecting events in which a charm quark is produced in association with a W boson.
 The main contributions to this process is from $\mrm{s} + \mrm{g} \to \mrm{W^{-}} + \mrm{c}$ and $\mrm{\bar{s}} + \mrm{g} \to \mrm{W^{+}} + \mrm{\bar{c}}$, where a key property is that the W boson and quark have oppositely signed electrical charges.
 The dominant background is $\mrm{W} + \mrm{q\bar{q}}$ events, which produce an equal amount of events with same- and opposite-signed W boson and quark pairs.
-Thus, this background is removed by measuring its contribution in the same-sign channel and the subtracting it from the opposite-sign channel, resulting in a pure $\mrm{W} + \mrm{c}$ channel.
+Thus, this background is removed by measuring its contribution in the same-sign channel and then subtracting it from the opposite-sign channel, resulting in a pure $\mrm{W} + \mrm{c}$ channel.
 The second charm-enriched control region is created by selecting single-lepton \ttbar events.
 As hadronically-decaying W bosons decay to a charm quark about 50\% of the time, about one of two single-lepton \ttbar events will contain a charm quark.
 Finally, measurements in these two regions are combined using the best linear unbiased estimator (BLUE) method described in Reference~\cite{LYONS1988110}.
@@ -219,7 +219,7 @@ Theoretical systematic uncertainties are applied and include independent and cor
 Additionally, uncertainties on the PDF are incorporated by considering variations in the NNPDF 3.0 scheme~\cite{Ball:2014uwa}.
 The size of these uncertainties is typically small as the effect of these variations is largely to modify the cross section of processes, which for the main backgrounds are constrained by data.
 
-The background systematic uncertainties that affect the \Nb shape are shown in Figure~\ref{fig:bkg_sys_tables} for the two most sensitive search bin.
+The background systematic uncertainties that affect the \Nb shape are shown in Figure~\ref{fig:bkg_sys_tables} for the two most sensitive search bins.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -234,7 +234,7 @@ These values are similar for other (\Njets, \MJ) bins.}
 
 \begin{subsection}{\Nb distribution with NLO Precision}
 
-As the nominal \Nb distribution shape is generated at LO precision, it is important to verify that the size of NLO effects is small and covered the experimental uncertainties.
+As the nominal \Nb distribution shape is generated at LO precision, it is important to verify that the size of NLO effects is small and covered by the experimental uncertainties.
 To do this, the \Nb distributions of \ttbar samples generated at LO precision with the default \MGatNLO~2.2.2 generator and samples generated at NLO precision with \POWHEG~2.0 are compared after the baseline selection.
 In order to evaluate only the shape differences between the two samples, the normalization of the \MGatNLO sample is scaled to match that of the \POWHEG sample.
 The comparison of the two distributions, shown in Figure~\ref{fig:nlo_nb_comparison}, is conducted in bins of \Njets and indicates a disagreement of only about $5\%$.

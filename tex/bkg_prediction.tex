@@ -34,11 +34,11 @@ To avoid biasing the normalization measurement, the small contribution of \ttbar
 \centering
 \begin{tabular}{ |c|c|c|c| }
 \hline
-\multirow{2}{*}{\MJ [\GeV]}          &  \multicolumn{3}{c|}{\Njets}                       \\ \cline{2-4}
-                                     &  4--5                         & 6--7  &  $\geq 8$  \\ \hline
-500--800                             &  CR                           & CR    &  SR        \\ \hline
-800--1000                            &  \multirow{2}{*}{CR}          & SR    &  SR        \\ \cline{1-1} \cline{3-4}
-$> 1000$                             &                               & SR    &  SR        \\ \hline
+\multirow{2}{*}{\MJ [\GeV]}          &  \multicolumn{3}{c|}{\Njets}                              \\ \cline{2-4}
+                                     &  6--7                             &  8--9    &  $\geq 10$ \\ \hline
+500--800                             &  QCD CR                           &  QCD CR  &  QCD CR    \\ \hline
+800--1000                            &  \multirow{2}{*}{QCD CR}          &  QCD CR  &  QCD CR    \\ \cline{1-1} \cline{3-4}
+$> 1000$                             &                                   &  QCD CR  &  QCD CR    \\ \hline
 \end{tabular}
 \caption{Diagram depicting the \Njets, \MJ binning of the $\Nleps = 0$ QCD control region.}
 \label{fig:nlep0_regions}
@@ -47,8 +47,8 @@ $> 1000$                             &                               & SR    &  
 \begin{subsection}{\MJ Connection}
 \label{subsec:mj_connection}
 
-Due to the large freedom of unconstrained normalization parameters, the fit can be sensitive to rare statistical fluctuations and return unphysical normalization values particurlarly in bins dominated by \ttbar events.
-For example, in psuedodata experiments, where data are generated according to the statistical and systematic uncertainties of the pre-fit values, the fit reduced the \ttbar contribution in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin (where statistical uncertainties are largest) to $\sim$0 in about $\sim$1\% of the experiments.
+Due to the large freedom of unconstrained normalization parameters, the fit can be sensitive to rare statistical fluctuations and return unphysical normalization values particularly in bins dominated by \ttbar events.
+For example, in psuedodata experiments, where psuedo-datasets are randomly generated according to the statistical and systematic uncertainties of the pre-fit values, the fit reduced the \ttbar contribution in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin (where statistical uncertainties are largest) to $\sim$0 in about $\sim$1\% of the experiments.
 This can be seen in Figure~\ref{fig:mj_connection_exps} (left) which shows a low tail in the distribution of post-fit \ttbar yields in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin for 1000 psuedodata experiments.
 This effect occurs when yields in a bin have a large fluctuation downwards, as the fit must lower the normalization of a process to compensate.
 The QCD, \Wjets, and Other contributions, however, are largely constrained by other data control samples or taken from simulation, and so the fit uses the freedom to adjust the \ttbar normalization in order to model the fluctuation, leading to the unphysically small values.
@@ -65,7 +65,7 @@ The resulting distribution of post-fit \ttbar yields now shows no evidence of un
 \centering
 \includegraphics[angle=0,width=0.90\columnwidth]{fig/mj_connection_exps.pdf}
 \caption{Distribution of post-fit yields of \ttbar in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin for 1,000 psuedodata experiments without (left) and with (right) constraints between adjacent \MJ bins.
-The dotted black line indicates the the pre-fit yield.}
+The dotted black line indicates the pre-fit yield.}
 \label{fig:mj_connection_exps}
 \end{figure}
 

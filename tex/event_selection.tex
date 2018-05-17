@@ -8,10 +8,10 @@ Fortunately, SUSY signatures typically have characteristics unlike most SM proce
 For the T1tbs process, in particular, events are expected to have a large number of jets, many of which are b-quark jets, resulting in a large amount of \HT and many b-tagged jets.
 Additionally, the mass scale of the event is expected to be larger than most SM events due to the high masses of the gluinos ($\mathcal{O}(1~\TeV)$), as discussed in Section~\ref{subsec:MJ}.
 
-These features are used to construct the ``baseline selection'', defined as a basic set of requirements that events must pass, and to reduce the signal-to-background ratio to a more manageable value of $\mathcal{O}(10^2)$.
+These features are used to construct the ``baseline selection'', defined as a basic set of requirements that events must pass, and to reduce the background-to-signal ratio to a more manageable value of $\mathcal{O}(10^2)$.
 Here the baseline selection is defined as \baseNleps, \baseHT, \baseMJ, \baseNjets, and \baseNb.
 To see the separation of signal and background in these variables, the corresponding ``N-1'' distributions, i.e. the distribution of a variable with the baseline selection applied except for the requirement corresponding to the binned variable, are depicted in Figure~\ref{fig:nminus1} with the black dashed vertical line representing the value of the baseline cut.
-Additionally, a ``cutflow table'' that depicts the expected yields for background and signal processes as each baseline selection requirement is indiviually applied is shown in Table~\ref{tab:cutflow}.
+Additionally, a ``cutflow table'' that depicts the expected yields for background and signal processes as each baseline selection requirement is individually applied is shown in Table~\ref{tab:cutflow}.
 Rows above the horizontal line correspond to requirements in the baseline selection, while those below correspond to additional kinematic cuts.
 
 \begin{figure}[tbp!]
@@ -29,7 +29,7 @@ The black dashed vertical line represents the value of the corresponding baselin
 \begin{table}[tbp!]
 \centering
 \includegraphics[angle=0,width=0.90\columnwidth]{fig/cutflow.pdf}
-\caption{Expected yields in $35~\ifb$ from simlulations of SM and signal processes.
+\caption{Expected yields in $35~\ifb$ from simulations of SM and signal processes.
 Rows above the horizontal line correspond to requirements in the baseline selection, while those below correspond to additional kinematic cuts.}
 \label{tab:cutflow}
 \end{table}
@@ -40,9 +40,9 @@ In order to create a \ttbar dominant background, \baseNb is required as \ttbar e
 Finally, the \baseNjets and \baseMJ cuts are applied in order to further increase the \ttbar purity of the analysis region.
 
 A benefit of these selections is that the background is dominated by a single process, \ttbar, which reduces the complexity of the background prediction.
-This is especially necessary as, after these cuts, the analysis region is on the kinematic tails of SM distributions where the physics is less well-kown and correspondingly less well-modelled, typically requiring data-driven background predictions.
+This is especially necessary as, after these cuts, the analysis region is on the kinematic tails of SM distributions where the physics is less well-modelled, typically requiring data-driven background predictions.
 
-Lastly, the baseline selection requires that events pass a series of filters designed to remvoe poorly reconstructed events. 
+Lastly, the baseline selection requires that events pass a series of filters designed to remove poorly reconstructed events. 
 These filters remove events with noise in the HCAL or ECAL, beam halo effects, jets that fail to pass quality criteria, and events with zero good PVs.
 
 A final note of interest is that there is no requirement on the \MET, making this analysis sensitive to BSM models other than MFV SUSY that produce either little or no \MET in an event.
@@ -52,14 +52,14 @@ While the T1tbs model is used as a benchmark for interpreting results, to take a
 
 \begin{section}{Trigger Efficiency}
 The data sample used in this analysis is obtained by selecting events that pass a loose HLT selection.
-In order to avoid biasing the selected sample, the HLT requirements must be significatly loose enough that the selection efficiency is as high as possible and independent of any kinematic properties.
+In order to avoid biasing the selected sample, the HLT requirements must be loose enough that the selection efficiency is as high as possible and independent of any kinematic properties.
 In particular, events must pass an \texttt{OR} of the \trigHT trigger, which requires an online-\HT of at least 900~\GeV and the \trigJet trigger, which at least one jet with online-\pT above 450~\GeV.
 
 Figure~\ref{fig:ht_trigger} shows the performance of the \trigHT trigger as a function of \HT during the first 27.3~\ifb (Runs B-G, top-left), last 8.7~\ifb (Run H, top-right), and full dataset (Runs B-H, bottom).
 The trigger performances are measured in a data sample collected using the \trigEle trigger and offline requirements of at least one electron and at least 4 jets.
 While the trigger efficiency for Runs B-G is 100\% after the trigger plateau of roughly $\HT = 1000~\GeV$, the trigger efficiency only performs with 80\% efficiency in Run H.
 This inefficiency was caused by an issue with an updated trigger implementation that erroneously excluded high \pT jets from the online-\HT calculation.
-This effect corresponds to an overall trigger efficency of 95\%, corresponding to a loss of about 2~\ifb of data.
+This effect corresponds to an overall trigger efficiency of 95\%, corresponding to a loss of about 2~\ifb of data.
 
 \begin{figure}[tbp!]
 \centering
@@ -71,10 +71,10 @@ The efficiences are measured using a data sample collected with the \trigEle tri
 \label{fig:ht_trigger}
 \end{figure}
 
-In order to recover this inefficency, events passing the \trigJet trigger are included in the collected data sample.
-To pass this trigger, events must have very high \pT jets, i.e. $\gtrsim 450~\GeV$, which provides complementary efficiency where the \trigHT trigger is inefficienct.
+In order to recover this inefficiency, events passing the \trigJet trigger are included in the collected data sample.
+To pass this trigger, events must have at least one very high \pT jets, i.e. $\gtrsim 450~\GeV$, which provides complementary efficiency where the \trigHT trigger is inefficient.
 Figure~\ref{fig:ht_jet_trigger} shows the performance as a function of \HT of the \trigJet trigger in Runs B-H (top-left) and the combination of the \trigHT and \trigJet in Run H (middle) and in the full dataset (bottom), measured with a dataset collected with \trigEle and offline requirements of at least one electron and at least 4 jets.
-The inclusion of the \trigJet trigger restores the overall trigger efficency to essentially 100\% in both Run H and the entire dataset.
+The inclusion of the \trigJet trigger restores the overall trigger efficiency to essentially 100\% in both Run H and the entire dataset.
 
 \begin{figure}[tbp!]
 \centering
