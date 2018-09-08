@@ -43,7 +43,7 @@ With the addition of these superpartners, a mechanism for naturally cancelling t
 For example, for a fermion $f$, the radiative corrections from the corresponding sfermion $\tilde{f}$, shown in Figure~\ref{fig:higgs_scalar_loop}, take the form
 \begin{align}
 \delta \mh^2|_{\tilde{f}} = &+N_{\tilde{f}}\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-\Lambda^2_{UV} + 2m_{\tilde{f}}^2\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] \nonumber \\
-                            &-N_{\tilde{f}}\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-2m_f^2 + 4m_f^2\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] + \mathcal{O}\frac{1}{\Lambda^2_{UV}}
+                            &-N_{\tilde{f}}\frac{\lambda_{\tilde{f}}}{8\pi^2} \left[-2m_f^2 + 4m_f^2\ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right)\right] + \mathcal{O}(\frac{1}{\Lambda^2_{UV}})
 \end{align}
 using the relation $\sqrt{2}m_f = \lambda_f\nu$.
 Supersymmetry imposes that $N_{\tilde{f}} = N_f$ and $\lambda_{\tilde{f}} = -\lambda_f^2$, and thus, in the case where $m_f = m_{\tilde{f}}$, this perfectly cancels not only the quadratic divergence in Equation~\ref{eqn:higgs_fermion_correction} but also the higher-order corrections, solving the Hierarchy Problem.
@@ -60,7 +60,7 @@ Of course, no superparticles have been observed at the SM scale.
 This, however, does not imply that supersymmetry is incorrect but only that if it exists, it is a broken symmetry.
 In this scenario where $m_f \neq m_{\tilde{f}}$, the quadratically divergent terms still cancel and what is left is only a lograithmic divergence, mediated by the squared mass difference of the partner particles:
 \begin{align}
-\delta \mh^2 = N_f\frac{\lambda_s}{8\pi^2} \left(m_f^2 - m_{\tilde{f}}^2\right) \ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right) + ...\ .
+\delta \mh^2 = N_f\frac{\lambda_f^2}{8\pi^2} \left(m_f^2 - m_{\tilde{f}}^2\right) \ln\left(\frac{\Lambda_{UV}}{m_{\tilde{f}}}\right) + ...\ .
 \label{eqn:total_higgs_correction}
 \end{align}
 This squared mass difference defines the degree to which the Higgs mass is fine-tuned.
@@ -112,7 +112,7 @@ For models where the LSP is a neutralino, the LSP is then a dark matter candidat
 
 \begin{figure}[tbp!]
 \begin{center}
-\includegraphics[angle=0,width=0.90\columnwidth]{fig/cms_susy_results.pdf}
+\includegraphics[angle=0,width=0.95\columnwidth]{fig/cms_susy_results.pdf}
 \end{center}
 \caption{An overview of recent results from SUSY searches from the Compact Muon Solenoid experiment~\cite{cms_susy_results}.}
 \label{fig:cms_susy_results}
@@ -140,9 +140,9 @@ Subsequently, RPV SUSY yields an important class of models that can ease the ten
 
 In the MSSM, the additional \RPV terms are
 \begin{align}
-W_{RPV} = \frac{1}{2}\lambda^{ijk}L_{i}L_{j}\overline{\mrm{e}}_{k} + \lambda^{'ijk}L_{i}Q_{j}\overline{\mrm{d}_{k}} + \frac{1}{2}\lambda^{''ijk}\overline{\mrm{u}}_{i}\overline{\mrm{d}}_{j}\overline{\mrm{d}}_{k} + \mu^{'i}L_{i}H_{u},
+W_{RPV} = \frac{1}{2}\lambda^{ijk}L_{i}L_{j}\overline{\mrm{e}}_{k} + \lambda^{'ijk}L_{i}Q_{j}\overline{\mrm{d}}_{k} + \frac{1}{2}\lambda^{''ijk}\overline{\mrm{u}}_{i}\overline{\mrm{d}}_{j}\overline{\mrm{d}}_{k} + \mu^{'i}L_{i}H_{u},
 \end{align}
-where the color indices have been surpressed, the letters $i$, $j$, $k$ denote generation.
+where the color indices have been surpressed and the letters $i$, $j$, $k$ denote generation.
 The fields $L_{i}$, $Q_{j}$, and $H_u$ are SU(2) doublets corresponding to leptons, quarks, and the Higgs boson, respectively, while $\overline{\mrm{e}}_k$, $u_i$, and $d_j$ are the charged lepton, up-type quark, and down-type quark SU(2) singlets.
 The $\mu$ and various $\lambda$ factors are coupling strengths for their corresponding interactions, where $\lambda$ and $\lambda^{''}$ must be antisymmetric in their first and last two indices, respectively, due to gauge invariance.
 A full description of RPV SUSY can be found in Reference~\cite{Barbier:2004ez}.
@@ -151,7 +151,7 @@ While there is no fundamental theoretical reason forbidding \RP violation, there
 The most stringent of these constraints is from proton decay on which current experimental results place a lower bound on the proton half-life of $\mathcal{O}(10^{34}\ \mrm{years})$~\cite{Bajc:2016qcc,Nishino:2009aa}.
 Proton decay, however, requires both a lepton number and baryon number violating coupling, as shown in Figure~\ref{fig:proton_decay}.
 This constraint can be avoided if a mechanism exists to make one of these couplings zero or negligibly small.
-Additionally, there are strong limits on the individual LNV and BNV couplings, for example from neutron oscillation and muon-to-electron decay measurements, which are most stringent for the light generations.
+Additionally, though, there are strong limits on the individual LNV and BNV couplings, for example from neutron oscillation and muon-to-electron decay measurements, which are most stringent for the light generations.
 Thus, for any mechanism to evade these constraints, it must also motivate smaller couplings for the lighter generations.
 
 \begin{figure}[tbp!]
@@ -169,7 +169,7 @@ One way to avoid the constraints placed on the RPV couplings is to construct a m
 In these Minimal Flavor Volating (MFV) SUSY models~\cite{Csaki:2013we,Krnjaic:2012aj,Csaki:2011ge}, the RPV couplings are related to the SM Yukawa couplings, making the third generation RPV couplings large and those of the first two small.
 For example, the $\lambda^{''}$ coupling can be written as
 \begin{align}
-\lambda^{''}_{ijk} = w^{''} y^{(u)}_i y^{(d)}_j y^{(d)}_k \epsilon_{ijk} V^{*}_{il}
+\lambda^{''}_{ijk} = w^{''} y^{(u)}_i y^{(d)}_j y^{(d)}_k \epsilon_{jkl} V^{*}_{il}
 \end{align}
 with $w^{''}$ an $\mathcal{O}(1)$ parameter and $y^{(u)}$ and $y^{(d)}$ the up- and down-type Yukawa couplings.
 From this, the sizes of the $\lambda^{''}_{ijk}$ couplings can be roughly estimated (using $w^{''} = 1$) are shown in Table~\ref{tab:mfv_couplings}, which depicts the dependence of the coupling strength on generation.
@@ -195,7 +195,7 @@ $t$  &  $4 \times 10^{-5}$   &  $6 \times 10^{-5}$  &  $2 \times 10^{-4}$ \\
 Because of these considerations, MFV SUSY is an intriguing class of models to investigate experimentally.
 In particular, due to the high $\glu\glu$ cross-section and large value of $\lambda^{''}_{\mrm{t}\mrm{b}\mrm{s}}$, a search for the pair-production of gluinos that decay via \rpvDecay, as shown in Figure~\ref{fig:rpv_decay}, is well-motivated.
 
-The remainder of this dissertation is dedicated to describing such a search conducted with the Compact Muon Solenoid detector using $\sqrt{s} = 13~\TeV$ $pp$ collisions.
+The remainder of this dissertation is dedicated to describing such a search conducted with the Compact Muon Solenoid detector using $\sqrt{s} = 13~\TeV$ proton-proton collisions.
 
 \begin{figure}[tbp!]
 \begin{center}

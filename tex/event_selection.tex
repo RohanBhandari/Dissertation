@@ -72,7 +72,7 @@ The efficiences are measured using a data sample collected with the \trigEle tri
 \end{figure}
 
 In order to recover this inefficiency, events passing the \trigJet trigger are included in the collected data sample.
-To pass this trigger, events must have at least one very high \pT jets, i.e. $\gtrsim 450~\GeV$, which provides complementary efficiency where the \trigHT trigger is inefficient.
+To pass this trigger, events must have at least one very high \pT jet, i.e. $\gtrsim 450~\GeV$, which provides complementary efficiency where the \trigHT trigger is inefficient.
 Figure~\ref{fig:ht_jet_trigger} shows the performance as a function of \HT of the \trigJet trigger in Runs B-H (top-left) and the combination of the \trigHT and \trigJet in Run H (middle) and in the full dataset (bottom), measured with a dataset collected with \trigEle and offline requirements of at least one electron and at least 4 jets.
 The inclusion of the \trigJet trigger restores the overall trigger efficiency to essentially 100\% in both Run H and the entire dataset.
 
@@ -87,12 +87,13 @@ The efficiences are measured using a data sample collected with the \trigEle tri
 \end{figure}
 
 This trigger efficiency, however, does not necessarilly correspond to the efficiency for signal events.
-A lower bound on the signal efficiency can be estimated by considering that the \trigJet trigger is fully efficient for jets with $\pT > 500~\GeV$ and 80\%-95\% of simulated signal events (depending on the mass of the gluino) have a jet with $pT > 500~\GeV$.
+A lower bound on the signal efficiency can be estimated by considering that the \trigJet trigger is fully efficient for jets with $\pT > 500~\GeV$ and 80\%-95\% of simulated signal events (depending on the mass of the gluino) have a jet with $\pT > 500~\GeV$.
 Thus, in the worst case scenario, the addition of the \trigJet trigger is still expected to recover at least 85\% of the lost signal efficiency in Run H.
 This results in an efficiency of at least 97\% in Run H and over 99\% for the full dataset for signal events.
 
-Lastly, to ensure that there is no kinematic bias in the trigger efficiency either inherently or residually from effects of the online-\HT calculation issue, the trigger efficency is measured as a function of \MJ, \Njets, and \Nb.
-The measurements are done in a data sample collected with the \trigEle trigger and an offline requirement of at least one electron, at least four jets, and \baseHT, and no kinematic bias is observed.
+Lastly, to ensure that there is no kinematic bias in the trigger efficiency either inherently or from residual effects of the online-\HT calculation issue, the trigger efficency is measured as a function of \MJ, \Njets, and \Nb.
+The measurements are done in a data sample collected with the \trigEle trigger and an offline requirement of at least one electron, at least four jets, and \baseHT.
+No kinematic bias is observed.
 
 \end{section}
 
@@ -108,14 +109,7 @@ The low-\Njets, low-\MJ bins are expected to be background-dominated and are use
 
 \begin{figure}[tbp!]
 \centering
-\begin{tabular}{ |c|c|c|c| }
-\hline
-\multirow{2}{*}{\MJ [\GeV]}          &  \multicolumn{3}{c|}{\Njets}                      \\ \cline{2-4}
-                                     &  4--5                        & 6--7  &  $\geq 8$  \\ \hline
-500--800                             &  CR                          & CR    &  SR        \\ \hline
-800--1000                            &  \multirow{2}{*}{CR}         & SR    &  SR        \\ \cline{1-1} \cline{3-4}
-$> 1000$                             &                              & SR    &  SR        \\ \hline
-\end{tabular}
+\includegraphics[angle=0,width=0.80\columnwidth]{fig/binning_nlep1.pdf}
 \caption{Illustration depicting the \Njets, \MJ binning after the baseline selection, with control and signal region bins denoted by ``CR'' and ``SR'', respectively.}
 \label{fig:analysis_regions} 
 \end{figure}

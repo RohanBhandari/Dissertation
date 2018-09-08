@@ -68,10 +68,10 @@ These biased mass points correspond to models where the number of signal events 
 For example, there are only 8.6 events expected for the $\mglu = 2000~\GeV$ model, summing over all analysis bins.
 This low yield means that gaussian-approximations of the poisson-distributed bin yields used in the fit model are inaccurate, leading to the bias in the fit.
 
-In order to test this hypothesis, additional signal injection studies, each consisting of 1000 experiments, are performed for the $\mglu = 2000~\GeV$ mass point, where the injected signal strengths are 1x, 3x, 5x, 10x the nominal cross-section.
+In order to test this hypothesis, additional signal injection studies, each consisting of 1000 experiments, are performed for the $\mglu = 2000~\GeV$ mass point, where the injected signal strengths are 1x, 3x, 5x, 10x the nominal cross section.
 The resulting median extracted signal is 78\%, 92\%, 95\%, and 98\% of the injected signal, respectively.
 These results support the hypothesis, as, with increasing signal strength, the gaussian-approximations become increasingly accurate, allowing for the fit to properly extract the signal contributions.
-The distributions of fitted signal strengths for these tests are shown in Figure~\ref{fig:siginj_bias_study}.
+The distributions of the fractional fitted signal strength for these tests are shown in Figure~\ref{fig:siginj_bias_study}.
 
 \begin{figure}[tbp!]
 \centering
@@ -83,12 +83,13 @@ The uncertainties drawn are the median upper and lower errors of the fitted sign
 
 \begin{figure}[tbp!]
 \centering
-\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_1x.png}
-\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_3x.png}
-\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_5x.png}
-\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_10x.png}
-\caption{Distribution of fitted signal strengths of 1000 psuedodata experiments for a 2000~\GeV gluino at 1x (top-left), 3x (top-right), 5x (bottom-left), and 10x (bottom-right) the nominal cross-section.
-The amount of signal extracted is 78\%, 92\%, 95\%, and 98\% the injected signal, respectively.}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_1x.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_3x.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_5x.pdf}
+\includegraphics[angle=0,width=0.45\columnwidth]{fig/siginj_bias_10x.pdf}
+\caption{Distribution of the fraction of signal extracted from 1000 psuedodata experiments for a 2000~\GeV gluino at 1x (top-left), 3x (top-right), 5x (bottom-left), and 10x (bottom-right) the nominal cross section.
+The last bin includes the overflow contents, and the black dashed line represents extracting as much signal as was injected.
+The median extracted signal is 78\%, 92\%, 95\%, and 98\% the injected signal, respectively.}
 \label{fig:siginj_bias_study}
 \end{figure}
 

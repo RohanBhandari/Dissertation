@@ -15,10 +15,10 @@ These particles, shown in Figure~\ref{fig:sm_particles}, consist of six quarks a
 
 Formally, the Standard Model is quantum field theory with symmetries described by the group $\mrm{SU}_c(3) \times \mrm{SU}_L(2) \times \mrm{U}_Y(1)$ and with a Lagrangian of
 \begin{align}
-\mathcal{L} &= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} \nonumber + i\overline{\psi}_i\slashed{D}\psi_i \\
-            &+ \psi_{i}y_{ij}\psi_{j}\phi + h.c. \nonumber + |D_{\mu}\phi|^2 - V(\phi),
+\mathcal{L} &= -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + i\overline{\psi}_i\slashed{D}\psi_i \nonumber \\
+            &+ y_{ij}(\psi_{i}\psi_{j}+\bar{\psi}_{i}\bar{\psi}_{j})\phi + |D_{\mu}\phi|^2 - V(\phi),
 \end{align}
-where $F_{\mu\nu}$ is the field strength tensor, $D_{\mu}$ is the gauge covariant derivative, $\slashed{D} = \gamma^{\mu}D_{\mu}$, $\psi_{i}$ are the fermion fields, $\phi$ is the Higgs field, $y_{ij}$ are the yukawa couplings, and h.c. is the hermitian conjugate of the term directly preceeding it.
+where $F_{\mu\nu}$ is the field strength tensor, $D_{\mu}$ is the gauge covariant derivative, $\slashed{D} = \gamma^{\mu}D_{\mu}$, $\psi_{i}$ are the fermion fields, $\phi$ is the Higgs field, and $y_{ij}$ are the yukawa couplings.
 In the top line, the first term of the Lagrangian describes the interactions of gauge bosons, while the second encodes the interactions between gauge bosons and fermions.
 The bottom line describes Higgs physics with the first term describing the Higgs-fermion interactions, the second term encoding the Higgs-gauge boson interactions, and finally, the third term representing the Higgs potential.
 
@@ -74,17 +74,17 @@ The long-awaited discovery of the Higgs boson~\cite{Aad:2012tfa,Chatrchyan:2012x
 This relatively low mass of the Higgs boson, however, creates two related theoretical concerns.
 First, the Higgs mass is tied to the electroweak scale by the relation 
 \begin{align}
-v = \frac{\mh}{\sqrt{2}\lambda_h} \approx 246~\GeV
+v = \frac{\mh}{\sqrt{2}\lambda_h} \approx 246~\GeV,
 \end{align}
-where $v$ is the higgs vacuum expectation value (vev), $m_H$ is the physical Higgs mass, and $\lambda_h$ is the Higgs Yukawa coupling.
+where $v$ is the higgs vacuum expectation value (vev), \mh is the physical Higgs mass, and $\lambda_h$ is the Higgs Yukawa coupling.
 The vev directly dictates the electroweak scale and is only on the order of 100~\GeV.
 The next largest known energy scale is that of quantum gravity and is typically defined as the Planck mass, which is on the order of $10^{19}~\GeV$.
 The question as to why these two scales are so discrepant is known as the Hierarchy Problem~\cite{Barbieri:1987fn}.
 
 The second question stems from trying to understand the observed mass of the Higgs boson in the prescence of quantum corrections.
-The Higgs mass can be broken down into two components, its bare mass, $m_{H,0}$, and contributions from radiative corrections, $\delta m_H^2$, as shown in the equation below
+The Higgs mass can be broken down into two components, its bare mass, $m_{h,0}$, and contributions from radiative corrections, $\delta \mh^2$, as shown in the equation below
 \begin{align}
-\mh^2 = m_{H,0}^2 + \delta \mh^2.
+\mh^2 = m_{h,0}^2 + \delta \mh^2.
 \end{align}
 As a scalar particle, the Higgs boson mass receives contributions from all massive particles, and in partcular, for a fermion, $f$, the contribution to the Higgs mass at the one-loop level, corresponding to the the diagram shown in Figure~\ref{fig:higgs_fermion_loop}, is of the form
 \begin{align}

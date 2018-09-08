@@ -32,15 +32,10 @@ To avoid biasing the normalization measurement, the small contribution of \ttbar
 
 \begin{figure}[tbp!]
 \centering
-\begin{tabular}{ |c|c|c|c| }
-\hline
-\multirow{2}{*}{\MJ [\GeV]}          &  \multicolumn{3}{c|}{\Njets}                              \\ \cline{2-4}
-                                     &  6--7                             &  8--9    &  $\geq 10$ \\ \hline
-500--800                             &  QCD CR                           &  QCD CR  &  QCD CR    \\ \hline
-800--1000                            &  \multirow{2}{*}{QCD CR}          &  QCD CR  &  QCD CR    \\ \cline{1-1} \cline{3-4}
-$> 1000$                             &                                   &  QCD CR  &  QCD CR    \\ \hline
-\end{tabular}
-\caption{Diagram depicting the \Njets, \MJ binning of the $\Nleps = 0$ QCD control region.}
+\includegraphics[angle=0,width=0.80\columnwidth]{fig/binning_nlep0.pdf}
+\caption{Diagram depicting the \Njets, \MJ binning of the analysis including the $\Nleps = 0$ QCD control region.
+The QCD control region bins are denoted by ``QCD CR'', while the $\Nleps = 1$ control and signal region bins are denoted by ``CR'' and ``SR'', respectively.
+The pairing structure between lepton bins is indicated by arrows for the $500 < \MJ \leq 800$ region and is the same for other \MJ bins.}
 \label{fig:nlep0_regions}
 \end{figure}
 
@@ -63,7 +58,8 @@ The resulting distribution of post-fit \ttbar yields now shows no evidence of un
 
 \begin{figure}[tbp!]
 \centering
-\includegraphics[angle=0,width=0.90\columnwidth]{fig/mj_connection_exps.pdf}
+\includegraphics[angle=0,width=0.48\columnwidth]{fig/mj_exps_noconn.pdf}
+\includegraphics[angle=0,width=0.48\columnwidth]{fig/mj_exps_conn.pdf}
 \caption{Distribution of post-fit yields of \ttbar in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin for 1,000 psuedodata experiments without (left) and with (right) constraints between adjacent \MJ bins.
 The dotted black line indicates the pre-fit yield.}
 \label{fig:mj_connection_exps}
