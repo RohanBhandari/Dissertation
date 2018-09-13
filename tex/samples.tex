@@ -6,13 +6,13 @@ This is a subset of the 40.8~\ifb delivered by the LHC and selected to correspon
 A plot of the cumulative delivered and recorded integrated luminosity by the LHC and CMS, respectively, is shown in~\ref{fig:lumi_2016}. 
 
 The data samples used in this analysis are shown in Table~\ref{tab:data_samples}.
-The \texttt{JetHT} datasets are primarily used to populate the analysis search region with events, while the \texttt{Single Electron} and \texttt{Single Muon} datasets are primarily used for trigger efficiency studies.
+The \texttt{JetHT} datasets are primarily used to populate the analysis region with events, while the \texttt{Single Electron} and \texttt{Single Muon} datasets are primarily used for trigger efficiency studies.
 
 \begin{figure}[tbp!]
 \begin{center}
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/lumi_2016.pdf}
 \end{center}
-\caption{Delivered and recorded integrated luminosity by the LHC and CMS, respectively, over 2016.~\cite{lumi_2016}}
+\caption{Delivered and recorded integrated luminosity by the LHC and CMS, respectively, over 2016~\cite{lumi_2016}.}
 \label{fig:lumi_2016}
 \end{figure}
 
@@ -30,7 +30,7 @@ Dataset name                                        \\
 /JetHT/Run2016G-03Feb2017-v1/MINIAOD                \\
 /JetHT/Run2016H-03Feb2017\_ver2-v1/MINIAOD          \\
 /JetHT/Run2016H-03Feb2017\_ver3-v1/MINIAOD          \\
-
+\hline
 /SingleElectron/Run2016B-03Feb2017\_ver2-v2/MINIAOD \\
 /SingleElectron/Run2016C-03Feb2017-v1/MINIAOD       \\
 /SingleElectron/Run2016D-03Feb2017-v1/MINIAOD       \\
@@ -39,7 +39,7 @@ Dataset name                                        \\
 /SingleElectron/Run2016G-03Feb2017-v1/MINIAOD       \\
 /SingleElectron/Run2016H-03Feb2017\_ver2-v1/MINIAOD \\
 /SingleElectron/Run2016H-03Feb2017\_ver3-v1/MINIAOD \\
-
+\hline
 /SingleMuon/Run2016B-03Feb2017\_ver2-v2/MINIAOD     \\
 /SingleMuon/Run2016C-03Feb2017-v1/MINIAOD           \\
 /SingleMuon/Run2016D-03Feb2017-v1/MINIAOD           \\
@@ -60,7 +60,7 @@ The corresponding integrated luminosity is 35.9~\ifb.}
 
 \begin{section}{Monte Carlo Simulation}
 
-Monte Carlo simulations (MC) are used to model both SM and BSM physics processes and are extremely useful in the design and optimization of the analysis stategy of new-physics searches.
+Monte Carlo simulations are used to model both SM and BSM physics processes and are extremely useful in the design and optimization of the analysis stategy of new-physics searches.
 These simulated samples allow for studying processes that in data would have control regions with impure and/or small sample sizes or, in the case of signal processes, may not even exist.
 This allows for both the optimization and validation of the (signal-plus-)background prediction methods, as the sensitivity of the analysis to particular signal models can be estimated and pathologies in the prediction methodology can be unearthed and investigated.
 Additionally, the simulated samples can be used to help commision and understand the collected data by comparing expectations from simulation to what is actually observed, particularly in the initial data taking periods.
@@ -146,7 +146,7 @@ TTZToQQ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8                                 & 
 \begin{subsection}{Signal Samples}
 
 For ease of generation and interpretation, signal samples are produced according to the Simplifed Model Spectra (SMS) paradigm~\cite{Alwall:2008ag,Alves:2011wf}, where all but one or two mass parameters in a particular decay chain are fixed.
-Due to their ``simplicity'', SMS models can be interpreted generally, reducing the sensitivity of results to model specifics and allowing for results to be applicable to a wide variety of new-physics models.
+Due to their ``simplicity'', SMS models can be interpreted generally and have reduced sensitivity to model specifics, allowing for results to be applicable to a wide variety of new-physics models.
 Additionally, the use of SMS models results in signficantly reduced computing time for model generation, as models need to be produced by scanning across at most only two parameters.
 
 The assumptions used in the simplified model of the \rpvDecay process, denoted as T1tbs, are given below:
@@ -159,7 +159,7 @@ The assumptions used in the simplified model of the \rpvDecay process, denoted a
 
 These assumptions correspond to a model of direct gluino pair production with each gluino decaying to a top, bottom, and strange quark. 
 An example diagram of the T1tbs model is shown in Figure~\ref{fig:T1tbs_diagram}.
-The only free parameter in this model is the mass of the gluino, and 11 signal models are generated between $\mglu = 1000$ and $2000~\GeV$ in steps of $100~\GeV$.
+The only free parameter in this model is the mass of the gluino.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -169,7 +169,7 @@ The only free parameter in this model is the mass of the gluino, and 11 signal m
 \label{fig:T1tbs_diagram}
 \end{figure}
 
-These signal models are generated with up to two extra partons in leading-order mode and dynamic factorization and renormalization scales by \MGatNLO~2.2.2.
+These signal models are generated between $\mglu = 1000$ and $2000~\GeV$ in steps of $100~\GeV$ with up to two extra partons in leading-order mode and dynamic factorization and renormalization scales by \MGatNLO~2.2.2.
 The rest of the signal sample production follows the same procedure used for the background samples, which includes the parton fragmentation and showering, simulation, and event reconstruction.
 Lastly, the samples are normalized to the NLO + next-to-leading logarithmic cross sections for gluino pair production~\cite{XSecgluinogluino}.
 

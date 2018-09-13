@@ -3,7 +3,7 @@
 \begin{section}{Examination of Pre-fit Data}
 \label{sec:prefit_data}
 
-Before proceeding with the full maximum likelihood fit using all the analysis bins, it is helpful to evaluate the observed, pre-fit data distributions.
+Before proceeding with the full maximum likelihood fit using all the analysis bins, it is helpful to evaluate the observed pre-fit data distributions.
 The pre-fit \Nb distributions for the control region bins are those shown in Figure~\ref{fig:prefit_cr} and have corresponding yields given in Table~\ref{tab:prefit_cr}, while those for the signal region bins are shown in Figure~\ref{fig:prefit_sr} and Table~\ref{tab:prefit_sr}.
 In Figure~\ref{fig:prefit_cr} and Figure~\ref{fig:prefit_sr}, the background normalization is scaled to match the observed data yields in each bin with a scaling factor that controls all processes equally.
 This approximates the effect of the various normalization parameters in the fit and allows for a rough comparison of the background and observed \Nb distribution shapes.
@@ -11,11 +11,11 @@ By examining this comparison, a qualitiative understanding of the results and ex
 
 \begin{figure}[tbp!]
 \centering
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/prefit_nlep1_nj67_highmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/prefit_nlep1_nj67_vhighmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/prefit_nlep1_nj8_lowmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/prefit_nlep1_nj8_highmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/prefit_nlep1_nj8_vhighmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/prefit_nlep1_nj67_highmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/prefit_nlep1_nj67_vhighmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/prefit_nlep1_nj8_lowmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/prefit_nlep1_nj8_highmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/prefit_nlep1_nj8_vhighmj.pdf}
 \caption{Pre-fit \Nb distributions of the signal region bins with the background simulation normalized to the observed data yields with a single scaling factor: $6 \leq \Njets \leq 7$, $800 < \MJ \leq 1000~\GeV$ (upper-left), $6 \leq \Njets \leq 7$, $\MJ > 1000~\GeV$ (upper-right), $\Njets \geq 8$, $500 < \MJ \leq 800~\GeV$ (middle-left), $\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$ (middle-right), and $\Njets \geq 8$, $\MJ > 1000~\GeV$ (bottom-middle).
 The ratio of data-to-simulation is shown in the lower panel.
 The pre-fit uncertainty is represented by the hatched band.}
@@ -51,7 +51,7 @@ $\geq 4$  &  $1.6$    &  $12.1$   & $0.9$    & $2.3$    &  $17.0$    &  $21$    
 \hline
 \hline
 \end{tabular}
-\caption{Pre-fit data and simulation yields in the control region bins in $35.9~\ifb$.}
+\caption{Pre-fit data and simulation yields in the control region bins in $35.9~\ifb$ of data.}
 \label{tab:prefit_cr}
 \end{table}
 
@@ -98,7 +98,7 @@ $\geq 4$  &  $0.0$    &  $1.3$    &  $0.1$    &  $0.2$   &  $1.5$     &  $2$    
 \hline
 \hline
 \end{tabular}
-\caption{Pre-fit data and simulation yields in the signal region bins in $35.9~\ifb$.}
+\caption{Pre-fit data and simulation yields in the signal region bins in $35.9~\ifb$ of data.}
 \label{tab:prefit_sr}
 \end{table}
 
@@ -116,7 +116,7 @@ The quantitative results of the background-only and signal-plus-background fit a
 \begin{subsection}{Background-only Fit Results}
 
 The results of a background-only fit of the observed \Nb distributions are shown in Figures~\ref{fig:bonly_cr} and \ref{fig:bonly_sr}.
-These figures separately show the $\Nleps = 1$ control and signal regions, although the fit includes all bins simultaneously. 
+These figures show the $\Nleps = 1$ control and signal regions separately although the fit includes all bins simultaneously. 
 The observed \Nb distributions are well described by the fit, and an examination of the nuisance parameters, displayed in Figure~\ref{fig:bonly_pulls}, shows that none of them are significantly changed by the fit, with typical deviations less that 0.05~s.d.
 The largest shifts in the nuisance parameters correspond to those controlling the gluon splitting rate (+0.50~s.d.), light-flavor b-tag SFs (+0.25~s.d.), and heavy-flavor b-tag SFs (+0.14~s.d.) and are well within their pre-fit uncertainties.
 The post-fit yields are presented in Table~\ref{tab:bonly_yields}.
@@ -127,7 +127,7 @@ The post-fit yields are presented in Table~\ref{tab:bonly_yields}.
 \includegraphics[angle=0,width=0.32\columnwidth]{fig/bonly_nlep1_nj45_highmj.pdf}
 \includegraphics[angle=0,width=0.32\columnwidth]{fig/bonly_nlep1_nj67_lowmj.pdf}
 \caption{Data and the background-only post-fit \Nb distribution for the control region bins: $4 \leq \Njets \leq 5$, $500 < \MJ \leq 800~\GeV$ (left), $4 \leq \Njets \leq 5$, $\MJ > 800~\GeV$ (middle), and $6 \leq \Njets \leq 7$, $500 < \MJ \leq 800~\GeV$ (right).
-The expected signal distribution is also shown for a gluino mass of 1600~\GeV.
+The expected signal distribution is also shown for a gluino mass of 1600~\GeV (red line).
 The ratio of data to post-fit yields is shown in the lower panel.
 The post-fit uncertainty is depicted as a hatched band.}
 \label{fig:bonly_cr}
@@ -141,7 +141,7 @@ The post-fit uncertainty is depicted as a hatched band.}
 \includegraphics[angle=0,width=0.32\columnwidth]{fig/bonly_nlep1_nj67_vhighmj.pdf}
 \includegraphics[angle=0,width=0.32\columnwidth]{fig/bonly_nlep1_nj8_vhighmj.pdf}
 \caption{Data and the background-only post-fit \Nb distribution for the signal region bins: $\Njets \geq 8$, $500 < \MJ \leq 800~\GeV$ (upper-left), $6 \leq \Njets \leq 7$, $800 < \MJ \leq 1000~\GeV$ (upper-middle), $\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$ (upper-right), $ 6 \leq \Njets \leq 7$, $\MJ > 1000~\GeV$ (bottom-left), and $ \Njets \geq 8$, $\MJ > 1000~\GeV$ (bottom-right).
-The expected signal distribution is also shown for a gluino mass of 1600~\GeV.
+The expected signal distribution is also shown for a gluino mass of 1600~\GeV (red line).
 The ratio of data to post-fit yields is shown in the lower panel.
 The post-fit uncertainty is depicted as a hatched band.}
 \label{fig:bonly_sr}
@@ -151,7 +151,7 @@ The post-fit uncertainty is depicted as a hatched band.}
 \centering
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/bonly_pulls.pdf}
 \caption{Post-fit pulls of the background-only fit.
-The post-fit value of the nuisance parameter is indicated by the data point, while the post-fit uncertainty is shown as a black line and is normalized by the pre-fit uncertainty depicted as the blue band.}
+The post-fit values of the nuisance parameters are indicated by data points, while the post-fit uncertainty is shown as a black line and is normalized by the pre-fit uncertainty depicted as the blue band.}
 \label{fig:bonly_pulls}
 \end{figure}
 
@@ -230,8 +230,8 @@ This suggests that the measurements of the nuisance parameters in the background
 
 \begin{subsection}{Signal-plus-background Fit Results}
 
-A signal-plus-background fit is performed for gluino masses ranging from 1000 to 2000~\GeV.
-For all masses, the post-fit \Nb distribution describes the data well, and the fit extracts at most a small and insignificant signal contribution.
+Despite the good description of the observed data by the background-only fit, performing a signal-plus-background fit is necessary to see if the observed data is also consistent with the presence of signal. 
+Thus, a signal-plus-background fit is performed for gluino masses ranging from 1000 to 2000~\GeV, and, for all masses, the post-fit \Nb distribution describes the data well with the fits extracting at most a small and insignificant signal contribution.
 
 For example, the fitted signal strength for a model corresponding to a $1600~\GeV$ gluno is $\mu = 0.18^{+0.41}_{-0.18}$ with the post-fit \Nb distributions shown in Figure~\ref{fig:splusb_cr} and Figure~\ref{fig:splusb_sr} for the control and signal region bins, respectively.
 The post-fit values of the nuisance parameters are small and consistent with those of the background-only fit, as shown in Table~\ref{tab:fit_pulls}.
@@ -251,11 +251,11 @@ The post-fit uncertainty is depicted as a hatched band.}
 
 \begin{figure}[tbp!]
 \centering
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/splusb_nlep1_nj8_lowmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/splusb_nlep1_nj67_highmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/splusb_nlep1_nj8_highmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/splusb_nlep1_nj67_vhighmj.pdf}
-\includegraphics[angle=0,width=0.32\columnwidth]{fig/splusb_nlep1_nj8_vhighmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/splusb_nlep1_nj8_lowmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/splusb_nlep1_nj67_highmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/splusb_nlep1_nj8_highmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/splusb_nlep1_nj67_vhighmj.pdf}
+\includegraphics[angle=0,width=0.40\columnwidth]{fig/splusb_nlep1_nj8_vhighmj.pdf}
 \caption{Data and the $\mglu = 1600~\GeV$ signal-plus-background post-fit \Nb distribution for the signal region bins: $\Njets \geq 8$, $500 < \MJ \leq 800~\GeV$ (upper-left), $6 \leq \Njets \leq 7$, $800 < \MJ \leq 1000~\GeV$ (upper-middle), $\Njets \geq 8$, $800 < \MJ \leq 1000~\GeV$ (upper-right), $ 6 \leq \Njets \leq 7$, $\MJ > 1000~\GeV$ (bottom-left), and $ \Njets \geq 8$, $\MJ > 1000~\GeV$ (bottom-right).
 The ratio of data to post-fit yields is shown in the lower panel.
 The post-fit uncertainty is depicted as a hatched band.}
@@ -266,7 +266,7 @@ The post-fit uncertainty is depicted as a hatched band.}
 \begin{center}
 \begin{tabular}{|l|c|c|c|} \hline
                                                   &  Post-fit pull   &  Post-fit pull  &                         \\
-Nuisance parameter                                &  ($b$-only fit)  &  ($s+b$ fit)    & $\rho(\theta_{i}, \mu)$ \\  
+Nuisance parameter                                &  ($b$-only fit)  &  ($s+b$ fit)    & $\rho(\theta_{m}, \mu)$ \\  
 \hline
 b,c jet b-tag SF (btag\_bc)                       &  +0.14, 0.93     &  +0.12, 0.94    &  -0.09                  \\
 u,d,s,g jet b-tag SF (btag\_udsg)                 &  +0.25, 0.91     &  +0.22, 0.91    &  -0.05                  \\
@@ -291,7 +291,7 @@ Renorm. and Fact. scale for \Wjets (wjets\_murf)  &  -0.00, 1.00     &  -0.00, 1
 \hline
 \end{tabular}
 \caption{Table of post-fit pulls of the background-only and signal-plus-background fit.
-The last column, $\rho(\theta_{i}, \mu)$, lists the correlation between the corresponding nuisance parameter, $\theta_{i}$, and the nuisance parameter controlling the signal strength, $\mu$.}
+The last column, $\rho(\theta_{m}, \mu)$, lists the correlation between the corresponding nuisance parameter, $\theta_{m}$, and the nuisance parameter controlling the signal strength, $\mu$.}
 \label{tab:fit_pulls}
 \end{center}
 \end{table}
@@ -340,10 +340,10 @@ Finally, the \CLs quantity can be calculated as the ratio of these two probabili
 \end{align}
 
 Using the \CLs quantity, a model can be said to be excluded at the ($1 - \alpha$) confidence level (CL), if for $\mu = 1$, $\CLs \leq \alpha$.
-Conventions are for the 95\% CL upper limit on $\mu$ to be quoted, corresponding to $\alpha = 0.05$, in which case the value of $\mu$ can be scanned until reaching $\CLs = 0.05$.
+Convention is for the 95\% CL upper limit on $\mu$ to be quoted, corresponding to $\alpha = 0.05$, in which case the value of $\mu$ can be scanned until reaching $\CLs = 0.05$.
 The resulting value of $\mu$ then represents the 95\% CL upper limit on the signal strength of the model and thus on its production cross section.
 
-\begin{section}{Limits on the T1tbs benchmark model}
+\begin{section}{Limits on the T1tbs Benchmark Model}
 
 The resulting 95\% upper limits on the signal production cross section from the \CLs procedure are shown in Figure~\ref{fig:limits}, which includes the expected and observed limits along with the gluino pair production cross section.
 Comparing the observed limits to the gluino pair production cross section~\cite{XSecgluinogluino} indicates that gluino masses below 1610~\GeV are excluded in the benchmark \smsDecay model.

@@ -1,19 +1,17 @@
 \chapter{Experimental Apparatus and Event Reconstruction}
 
-When the Large Hadron Collider was approved over 20 years ago, much of its design was influenced by the needs of searches for physics beyond the Standard Model (BSM).
-The two most important properties of a collider are its center-of-mass energy and its (instantaneous) luminosity, both of which were designed to be higher than any previous experiment. 
+When construction of the Large Hadron Collider was approved over 20 years ago, much of its design was influenced by the need to search for physics beyond the Standard Model (BSM).
+The two most important properties of a collider are its center-of-mass energy and its (instantaneous) luminosity, and the LHC was designed to surpass all previous colliders in both aspects.
 The designed center-of-mass energy, $\sqrt{s}$, of $14~\TeV$ allows for the production of particles heavier than ever before, while the designed luminosity of $10^{34}~\cm^{-2}\s^{-1}$ allows BSM searches to probe very rare processes.
 
 In the same way, the design of the Compact Muon Solenoid (CMS) detector reflects the needs of BSM searches.
 In particular, an all-purpose, hermitic detector that can precisely measure a variety of particles is essential to fully search the parameter space of the many (un)theorized new physics models.
 
-A complete description of the LHC and CMS can be found in Refs.[INCLUDE].
-
 \begin{section}{The Large Hadron Collider}
 
 The LHC since 2015 has been colliding protons together at $\sqrt{s} = 13~\TeV$, slightly below the designed specifications but still at an unsurpassed energy.
-In order to reach this center-of-mass energy, the LHC uses a large accelerator complex consisting of a sucession of many smaller particle accelerators, which is necessary to produce protons and bring them up to a speed such that they can be injected into the LHC ring.
-A diagram of the CERN accelerator complex is shown in Figure~\ref{fig:lhc_accelerator_complex}.
+In order to reach this center-of-mass energy, the LHC uses a large accelerator complex consisting of many smaller particle accelerators, which is necessary to produce protons and bring them up to a speed such that they can be injected into the LHC ring.
+A diagram of the CERN accelerator complex is shown in Figure~\ref{fig:lhc_accelerator_complex}, while Figure~\ref{fig:lhc_map} shows the physical size of the LHC.
 
 \begin{figure}[tbp!]
 \begin{center}
@@ -23,6 +21,14 @@ A diagram of the CERN accelerator complex is shown in Figure~\ref{fig:lhc_accele
 \label{fig:lhc_accelerator_complex}
 \end{figure}
 
+\begin{figure}[tbp!]
+\begin{center}
+\includegraphics[angle=0,width=0.65\columnwidth]{fig/lhc_map.jpg}
+\end{center}
+\caption{A map that shows the physical extent of the Large Hadron Collider.}
+\label{fig:lhc_map}
+\end{figure}
+
 This process first begins with a simple bottle of hydrogen gas, from which the hydrogen atoms are ionized by an electric field to produce the needed protons.
 These resulting protons are then fed into LINAC 2, the first accelerator in the chain, which accelerates them up to $50~\MeV$, creating a beam of protons.
 The proton beam is then passed succesively to the Proton Synchtron Booster, Proton Synchotron, and Super Proton Synchtron, where the beam reaches energies of $1.4~\GeV$, $25~\GeV$, and $450~\GeV$, respectively.
@@ -30,7 +36,7 @@ At the Proton Synchotron, the beams are additionally split into ``bunches'', eac
 Finally, the protons can be injected into the two beam pipes of the LHC, each circulating in opposite directions. 
 These beams continue to be accelerated until they reach their final energy of $6.5~\TeV$, allowing for collisions at $\sqrt{s} = 13~\TeV$.
 At this point, the proton beams are focused and fine-tuned at several stages in order to increase the luminosity. 
-In 2016, the LHC was able to collide protons with an instantaneous luminosity of $1.4~\times~10^{34}~\cm^{-2}\s^{-1}$, exceeding its designed specification, and deliver a record-high integrated luminosity of $41.07~\ifb$.
+In 2016, the LHC was able to collide protons with an instantaneous luminosity of $1.4~\times~10^{34}~\cm^{-2}\s^{-1}$, which exceeded its designed specification and delivered a record-high integrated luminosity of $40.8~\ifb$.
 
 These improvements from previous generations of colliders greatly increase the reach of searches for new, heavy particles.
 Since the center-of-mass energy of the actual colliding partons, $\sqrt{\hat{s}}$, is typically much less than the overall center-of-mass energy, raising the collider's energy can greatly increase the production cross-section of heavy particles, especially of those around the \TeV scale. 
@@ -53,8 +59,8 @@ A more complete description of the LHC can be found in Reference~\cite{Evans:200
 
 Along the tunnels of the LHC, below Cessy, France, sits the CMS detector, shown in Figure~\ref{fig:cms_detector}, where proton-proton collisions are recorded.
 The overall shape of the detector is cylindrical with a length of $21.6~\m$ and radius of $7.3~\m$, while weighing roughly 14,000 metric tons.
-The CMS detector is sometimes called a cylindrical onion, as its shape is constructed through layers of specialized detectors, each designed to provide precise measurements for a particular particle type.
-Peeling back the layers from the outside-in, the first sub-detector is the muon system. 
+The CMS detector is sometimes called a cylindrical onion, as its shape is comprised of layers of specialized detectors, each designed to provide precise measurements for a particular particle type.
+Peeling back the layers from the outside-in, the first sub-detector is the muon system, which is represented by the ``M'' in CMS. 
 Next is a superconducting solenoid of $6~\m$ internal diameter that produces a magnetic field of $3.8~\mrm{T}$, and perhaps most importantly provides the ``S'' in CMS.
 Placed within the solenoidal magnet, is the rest of the CMS detector, namely the Hadron Calorimeter (HCAL), Electromagnetic Calorimeter (ECAL), and a silicon tracker.
 The design challenge of compactly fitting most of the detector components within the solenoid is responsible for the ``C'' in CMS.
@@ -99,7 +105,7 @@ A detailed discussion can be found in Reference~\cite{Chatrchyan:2008aa}.
 \begin{subsection}{Inner Tracking System}
 
 The tracking system is used for precise measurements of the trajectories of charged particles, as well as reconstruction of seconday vertices.
-As the tracking system is the closest subdetector to the interaction point, it faces a very large particle flux rate and so must be able to provide both high granularity and fast response, as well be able to survive operating in those conditions with an expected lifetime of 10 years.
+As the tracking system is the closest subdetector to the interaction point, it faces a very large particle flux rate and so must be able to provide both high granularity and fast response, as well as be able to survive operating in those conditions with an expected lifetime of 10 years.
 At the same time, these features must be balanced with minimizing the amount of material in order to reduce unwanted interactions with the detector, such as multiple scattering, photon conversion, and nuclear interactions.
 These requirements lead to a tracking system composed entirely of silicon technology.
 
@@ -109,7 +115,7 @@ In total, the pixel detector covers an area of roughly $1~\m^2$ with 66 million 
 
 The second part of the tracking system is the strips detector which sits just outside the pixel detector.
 The strips detector is composed of 4 parts: the tracker inner barrel (TIB), tracker inner disks (TID), tracker outer barrel (TOB), and the tracker endcaps (TEC).
-The TIB and TID extend up to $55~\cm$ in radius and are composed of 4 and 3 layers, respectively, while the TOB, which surronds the TIB and TID, extends out to $116~\cm$ and is composed of 6 layers.
+The TIB and TID extend up to $55~\cm$ in radius and are composed of 4 and 3 layers, respectively, while the TOB, which surrounds the TIB and TID, extends out to $116~\cm$ and is composed of 6 layers.
 Lastly, the TEC which sits next to the other strip detector components, covers a radius of 22.5 to $113.5~\cm$ and is composed of 9 disks.
 In total, the strips detector covers an area of $198~\m^2$ with 9.3 million strips.
 A layout of the tracking system including the pixel and strips detector is shown in Figure~\ref{fig:cms_tracker}.
@@ -132,7 +138,7 @@ Both the barrel and endcap sections are comprised of lead tungstate ($\mrm{PbWO_
 The use of the $\mrm{PbWO_{4}}$ crystals was motivated by their high density, short radiation length, small Moli\`ere radius, and radiation hardness, all of which allow for a fine granularity, radiation resistant, compact calorimeter.
 
 The lead tungstate crystals act as scintillators, which produce an amount of light that is proportional to the energy of an incident particle.
-This light is then converted to an electrical signal by silicon photodectors (avalanche photodetectors in the barrel and vacuum hototriodes in the endcaps), which is used for the final energy measurement.
+This light is then converted to an electrical signal by silicon photodectors (avalanche photodetectors in the barrel and vacuum phototriodes in the endcaps), which is used for the final energy measurement.
 The resulting resolution on the energy measurements is given by 
 
 \begin{equation}
@@ -169,7 +175,7 @@ These light pulses are carried by wavelength-shifting fibers to a hybrid photodi
 \begin{center}
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/cms_hcal.png}
 \end{center}
-\caption{The layout and geometry of a quarter of the HCAL detector.~\cite{1748-0221-5-03-T03014}}
+\caption{The layout and geometry of a quarter of the HCAL detector~\cite{1748-0221-5-03-T03014}.}
 \label{fig:cms_hcal}
 \end{figure}
 
@@ -195,7 +201,7 @@ At this position, the HO is able to identify late starting showers and measure t
 
 \begin{subsection}{Muon System}
 
-Muons, as implied by the ``M'' in CMS, are a central focus of the CMS detector, and the responsibiilty of identifying muons with high purity and providing precise momenta measurements falls to the muon system.
+Muons, as implied by the name of CMS, are a central focus of the CMS detector, and the responsibiilty of identifying muons with high purity and providing precise momenta measurements falls to the muon system.
 To do this, the muon system is composed of three types of gaseous detectors, motivated by the need to cover a large area and varying radiation environments.
 Figure~\ref{fig:cms_muonsys} shows the layout of the muon system within the CMS detector.
 
@@ -203,7 +209,7 @@ Figure~\ref{fig:cms_muonsys} shows the layout of the muon system within the CMS 
 \begin{center}
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/cms_muonsys.png}
 \end{center}
-\caption{The layout of the muon system within the CMS detector.~\cite{1748-0221-8-04-P04005}}
+\caption{The layout of the muon system within the CMS detector~\cite{1748-0221-8-04-P04005}.}
 \label{fig:cms_muonsys}
 \end{figure}
 
@@ -239,7 +245,7 @@ Lastly, the Global Calorimeter Trigger (GCT) uses the information from the RCT t
 For the muon portion of the L1 trigger system, the DTs and CSCs both compute local trigger information which consists of two- and three-dimensional track segments, respectively.
 This information is then passed to a joint DT-CSC track finder, which connects these segments into a full candidate track.
 At the same time, the RPC constructs a separate, independent set of track candidates.
-Both sets of candidate tracks are sent to the Global Muon trigger (GMT), which also takes in the relavent information from the RCT), to construct muon candidates.
+Both sets of candidate tracks are sent to the Global Muon trigger (GMT), which also takes in the relavent information from the RCT, to construct muon candidates.
 
 Lastly, the candidate particles and event-level information from the GCT and GMT are sent to the Global Trigger, which takes this information and checks to see if certain criteria are met.
 If so, a L1 Accept (L1A) is generated, which signals for the event to be fully read out.
@@ -249,7 +255,7 @@ This process, shown in Figure~\ref{fig:cms_trigger}, reduces the full readout ra
 \begin{center}
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/cms_trigger.png}
 \end{center}
-\caption{Flowchart depicting the generation of a L1 Accept.~\cite{1748-0221-3-08-S08004}}
+\caption{Flowchart depicting the generation of a L1 Accept~\cite{Chatrchyan:2008aa}.}
 \label{fig:cms_trigger}
 \end{figure}
 
@@ -264,9 +270,3 @@ At the end of this process, the trigger rate is approximately $100~\mrm{Hz}$.
 \end{subsection}
 
 \end{section}
-
-%Notes:
-% include references for LHC and CMS (in intro to section)
-% Add a physical view of the LHC (like a map view)
-% Can expand by talking about how the beam is squeezed.
-% Add an HF timing section

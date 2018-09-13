@@ -69,7 +69,7 @@ These components directly give rise to ``HF EM'' and ``HF HAD'' clusters.
 
 The particle-flow (PF) algorithm is a holistic approach towards event reconstruction.
 It combines the basic information of subdetectors, i.e. the tracks and clusters defined above, to identify each final-state particle and reconstruct their corresponding properties.
-By correlating measurements from the tracker and calorimeter, the PF algorithm is able to provide improved energy and momentum measurements. A complete, detailed presentation of the particle-flow algorithm is given in~\cite{1748-0221-12-10-P10003,CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}.
+By correlating measurements from the tracker and calorimeter, the PF algorithm is able to provide improved energy and momentum measurements. A complete, detailed presentation of the particle-flow algorithm is given in References~\cite{1748-0221-12-10-P10003,CMS-PAS-PFT-09-001,CMS-PAS-PFT-10-001}.
 
 \begin{subsection}{Linking}
 
@@ -130,7 +130,7 @@ The excess ECAL energy is preferentially given to photons over neutral hadrons, 
 
 \begin{section}{Leptons}
 
-As the identification criteria for selecting PF electrons and PF muons are weak, these objects serve as candidate particles. 
+As the identification criteria for selecting PF electrons and PF muons are loose, these objects serve as candidate particles. 
 To increase the purity of true electrons/muon, more stringent criteria must be passed for a PF electron/muon to be considered an analysis-level electron/muon.
 The number of analysis-level leptons, where a lepton is defined as either an electron or muon, is denoted as \Nleps.
 
@@ -161,7 +161,7 @@ Pass photon conversion                            & True                 & True 
 \end{table}
 
 Additionally, to preferentially select electrons that originate from the decay of W and Z bosons, electrons are required to be isolated from other PF candidates.
-The relative isolation of a particle $I^{\mrm{rel}}$ is quantified using an optimized version of the mini-isolation variable $I_{\mrm{mini}}$.
+The relative isolation of a particle $I^{\mrm{rel}}$ is quantified using an optimized version of the mini-isolation variable $I^{\mrm{mini}}$.
 Mini-isolation is computed as the scalar sum of the \pT of charged hadrons from the PV, neutral hadrons, and photons that are within a cone of radius $R^{\text{mini-iso}}$ surrounding the electron momentum vector $\vec{p}$ in $\eta$-$\phi$ space~\cite{Rehermann:2010vq}.
 The cone radius $R^{\text{mini-iso}}$ varies with $1/\pT$ according to
 \begin{align}
@@ -173,7 +173,7 @@ R^{\text{mini-iso}} &=\begin{cases} 0.2, &
 \end{align}
 
 The \pT-dependent cone size reduces the rate of accidental overlaps between the electron and jets in high-multiplicity events or highly Lorentz-boosted decays and in particular overlaps between bottom quark jets and leptons originating from a boosted top quark.
-Relative isolation is computed as $I^{\mrm{rel}} = I_{\mrm{mini}}/\pT$ after subtraction of the average contribution from additional proton-proton collisions in the same bunch-crossing (pileup).
+Relative isolation is computed as $I^{\mrm{rel}} = I^{\mrm{mini}}/\pT$ after subtraction of the average contribution from additional proton-proton collisions in the same bunch-crossing (pileup).
 To be considered isolated, electrons must satisfy $I^{\mrm{rel}} < 0.1$.
 
 The combined efficiency for the electron reconstruction, identification, and isolation requirements, shown in Figure~\ref{fig:electron_eff}, is about 50\% at $\pT$ of $20~\GeV$, increasing to 65\% at $50~\GeV$, and reaching a plateau of 80\% above $200~\GeV$~\cite{Khachatryan:2015hwa}.
@@ -204,6 +204,7 @@ Is PF muon                                     &  True        \\
 Fraction of valid tracker hits                 &  $> 0.8$     \\
 \hline
 \multicolumn{2}{c}{\texttt{AND}}                              \\      
+\hline
 $|d_0|$~[mm]                                   &  $< 2$       \\
 $|d_z|$~[mm]                                   &  $< 5$       \\
 Is global muon                                 &  True        \\
@@ -242,16 +243,18 @@ This makes the problem of jet clustering non-trivial and an important aspect of 
 
 \begin{subsection}{Clustering}
 
-Jets are not physically-defined objects, and instead it is the clustering rules that define what a jet is.
-The common class of clustering algorithms used are sequential recombination algorithms, which work by defining a distance measure between pairs of particles, typicaly based on energy and spatial-location, and then combining the closest pair of particles.
+Jets are not physically-defined objects and are instead defined by the clustering rules that form the jets.
+The primary class of clustering algorithms used are sequential recombination algorithms, which work by defining a distance measure between pairs of particles, typicaly based on energy and spatial-location, and then combining the closest pair of particles.
 This process proceeds sequentially and ends when some threshold condition is met.
 
-In particular, the distance measures, $d_{ij}$, which is the distance between two entities (particles or psuedojets), and $d_{iB}$, which is the distance between an entity and the beam, are often defined to be
+Commonly, the distance measures, $d_{ij}$, which is the distance between two entities (particles or psuedojets), and $d_{iB}$, which is the distance between an entity and the beam, are defined to be
 
 \begin{equation}
-d_{ij} = \mrm{min}(p_{\mrm{T}i}^{2n},p_{\mrm{T}j}^{2n})\frac{\Delta R_{ij}^{2}}{R^2},
+d_{ij} = \mrm{min}(p_{\mrm{T}i}^{2n},p_{\mrm{T}j}^{2n})\frac{\Delta R_{ij}^{2}}{R^2}
 \label{clustering_dij}
 \end{equation}
+
+and
 
 \begin{equation}
 d_{iB} = p_{\mrm{T}i}^{2n},
@@ -262,7 +265,7 @@ The clustering procedure then proceeds by finding the smallest of the distances,
 
 The parameter $n$ determines the clustering order of the algorithm and thus different choices for the value of $n$ lead to different clustering algorithms.
 For $n = 1$, the clustering follows the \kT algorithm~\cite{Ellis:1993tq}, which prioritizes clustering softer particles first.
-Setting $n = 0$, reproduces the Cambridge-Aachen algorithm~\cite{Dokshitzer:1997in}, which uses energy-independent clustering, relying only on the spatial distances between particles.
+Setting $n = 0$, reproduces the Cambridge-Aachen algorithm~\cite{Dokshitzer:1997in}, which is an energy-independent approach, relying only on the spatial distances between particles.
 Lastly, choosing $n = -1$, gives the anti-\kT algorithm~\cite{Cacciari:2008gp}, which favors using the harder particles as the jet seeds and then clustering around them.
 A more detailed discussion of jets, including a comparison of these and other clustering algorithms can be found in Reference~\cite{Salam:2009jx}.
 
@@ -278,7 +281,7 @@ Additionally, to prevent double-counting, any jets which contain a PF candidate 
 Finally, to be considered an analysis-level jet, the jets must have $\pT > 30~\GeV$, $|\eta| < 2.4$, and must pass a set of loose identification requirements~\cite{jet_id,1748-0221-6-11-P11002} to surpress, for example, calorimeter noise.
 These requirements are shown in Table~\ref{tab:jet_id}.
 The resulting jets are considered to be ``\smallR'' jets  and the variable \Njets represents the number of these jets in an event.
-Additionally, a proxy for the hadronic energy scale of an event, \HT, can be defined as
+Additionally, a proxy for the hadronic energy scale of an event, \HT, is defined as
 \begin{align}
 \HT = \sum_{i = 1}^{\Njets} p_{T,i}^{jet}
 \end{align}
@@ -305,13 +308,13 @@ Chaged hadron fraction            &  $> 0$       \\
 
 \begin{subsection}{b-tagging}
 
-Jets that are formed through b-quark hadronization have several unique properties that allow them to be differentiated from jets formed through other quarks or gluons.
+Jets that are formed through b-quark hadronization have several unique properties that allow them to be differentiated from jets formed from other quarks or gluons.
 This ability to ``b-tag'' jets is a very useful tool for determining what physics processes occured in an event, as b~quarks are associated with specific physics process, such as top quark decays.
 Similarly, many SUSY scenarios, where naturalness considerations motivate light third-generation squarks, result in either the direct or indirect production of b~quarks through the decay of SUSY particles.
 Thus, b-tagging jets is not only often a crucial component to reducing backgrounds from processes where no b~quarks are expected, but also a powerful selector for potential signal events. 
 
 This analysis uses the Combined Secondary Vertex v2 (CSVv2) algorithm~\cite{Chatrchyan:2012jua,Sirunyan:2017ezt}, which utilizes the long lifetimes, large masses, high-momentum daughter particles, and frequent semi-leptonic decays typical of b~hadrons to b-tag jets.
-As the b~quark can only decay to an up or charm quark through highly Cabibbo surpressed weak interactions, b~hadrons tend to have long lifetimes, typically on the order of 150~\ps.
+As the b~quark can only decay to an up or charm quark through highly Cabibbo surpressed weak interactions, b~hadrons tend to have long lifetimes, typically on the order of 1.5~\ps.
 Because of this, b~mesons can travel a few mm to a cm from the PV before decaying and producing displaced tracks from which a secondary vertex can be reconstructed.
 In addition, due to the relatively large b-quark mass, b~mesons tend to be heavy, which leads to both large secondary vertex masses and daughter particles with a hard momentum spectrum.
 Lastly, the weak decay of the b~quark results in an associated electron or muon in about 20\% of decays.
@@ -354,8 +357,6 @@ The number of b-tagged jets in an event is denoted as \Nb.
 \label{fig:btag_eff}
 \end{figure}
 
-% SHOW VARIABLE PLOTS: https://inspirehep.net/record/1644362/plots
-
 \end{subsection}
 
 \end{section}
@@ -363,9 +364,9 @@ The number of b-tagged jets in an event is denoted as \Nb.
 \begin{section}{Large-radius Jets}
 
 While the distance parameter of \smallR jets is optimized for clustering the hadronization products of a single parton, it is often useful to exploit information of physical processes on a scale larger than a single jet, such as top quark or W boson decays.
-One way to capture this information is to cluster jets with a large distance parameter, which encodes the momentum, angular, and multiplicity information of the partons contained in this larger jet.
+One way to capture this information is to cluster jets with a large distance parameter, which can encode the momentum, angular, and multiplicity information of the partons contained in this larger jet.
 
-In particular, this analysis constructs these ``\largeR'' jets by clustering ``\smallR'' jets with a distance parameter of $R = 1.2$.
+This analysis constructs these ``\largeR'' jets by clustering \smallR jets with a distance parameter of $R = 1.2$.
 Due to the relatively small number of \smallR jets in an event ($\lesssim 10$), the construction of these \largeR jets is insensitive to the clustering algorithm, and the anti-\kT algorithm is chosen.
 While these \largeR jets could be constructed by performing the clustering at the PF candidate level, no significant improvement in performance was noted.
 Thus, clustering \smallR jets were chosen for the following practical considerations.
@@ -374,7 +375,7 @@ Secondly, \largeR jets clustered from PF candidates would require the computatio
 Small-$R$ jets, however, already incorporate standardized calibrations and by clustering these calibrated \smallR jets, the \largeR jets correspondingly incorporate corrections without the need of any additional development.
 
 In addition to \smallR jets, the jets associated with selected leptons are included in the formation of \largeR jets in order to capture as much of an event's kinematic information as possible.
-For example, this helps reduce the difference between \largeR jets formed by clustering hadronic and (semi-)leptonic decays, as by including the lepton, the only information difference between the two scenarios is due to the undetected neutrino(s).
+For example, this helps reduce the difference between \largeR jets formed by clustering hadronic and leptonic top quark decays, as by including the lepton, the only information difference between the two scenarios is due to the undetected neutrino.
 
 This technique of clustering \smallR jets into \largeR jets has been used previously by both the ATLAS and CMS collaborations, e.g. References~\cite{Aaboud:2017aeu,Khachatryan:2016uwr}.
 
@@ -396,7 +397,7 @@ For signal events, however, the mass-scale is roughly set by the gluino mass, wh
 The \MJ distribution in \ttbar and signal events with $\mglu = 1000~\GeV$ and $1600~\GeV$, selected with a $\Njets \geq 8$ requirement to ensure both processes have similar \Njets distributions, is shown in Figure~\ref{fig:mj_distributions}. 
 From the figure, it can be seen that the \MJ distribution gets increasingly harder with higher gluino mass.
 Also of note is that the \MJ distribution in \ttbar events extends past $2m_{top}$.
-This is because, in the presence of significant ISR, the ISR jets can either overlap with the \ttbar daughter jets or boost the \ttbar system such that the system is collimated, both which result in high-mass \largeR jets and, correspondingly, high-\MJ.
+This is because, in the presence of significant initial state radiation (ISR), the ISR jets can either overlap with the \ttbar daughter jets or boost the \ttbar system such that the system is collimated, both which result in high-mass \largeR jets and, correspondingly, high-\MJ.
 Processes of this nature are responsible for generating high \MJ background events.
 
 The quantity \MJ was proposed in phenomenological studies~\cite{Hook:2012fd,Cohen:2012yc,Hedri:2013pvl} and was first used for RPC SUSY searches by the ATLAS Collaboration in all-hadronic final states~\cite{Aad:2015lea,Aad:2013wta} and by the CMS Collaboration in single-lepton events~\cite{Khachatryan:2016uwr,Sirunyan:2017fsj}.
@@ -405,7 +406,7 @@ Additionally, the basic properties and performance of the \MJ variable were comm
 \begin{figure}[tbp!]
 \centering
 \includegraphics[angle=0,width=0.80\columnwidth]{fig/mj_distributions.pdf}
-\caption{Distributions of \MJ, normalized to the same area, for \ttbar events and signal events with $\mglu = 1000~\GeV$ and $1600~\GeV$ in a selection of \baseNleps, \baseHT, $\Njets \geq 8$, \baseMJ, and \baseNb.}
+\caption{Distributions of \MJ, normalized to the same area, for \ttbar events (solid blue) and signal events with $\mglu = 1000~\GeV$ (dashed red) and $1600~\GeV$ (solid red) in a selection of \baseNleps, \baseHT, $\Njets \geq 8$, \baseMJ, and \baseNb.}
 \label{fig:mj_distributions}
 \end{figure}
 

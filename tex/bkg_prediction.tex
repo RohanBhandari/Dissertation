@@ -13,7 +13,7 @@ The overall \Wjets normalization is determined from data and is allowed to vary 
 Further details on the measurement of the normalizations are given in the following sections.
 
 Once the SM backround processes are normalized accordingly, further corrections to the \Nb shape are relatively small.
-The nominal \Nb shape prediction for each process is taken from simulation with data-to-simulation correction factors (SFs) applied for the tagging efficiency of heavy- and light-flavor jets~\cite{Chatrchyan:2012jua,Sirunyan:2017ezt}.
+The nominal \Nb shape prediction for each process is taken from simulation with data-to-simulation correction factors (SFs) applied for the b-tagging efficiency of heavy- and light-flavor jets~\cite{Chatrchyan:2012jua,Sirunyan:2017ezt}.
 This shape is allowed to vary in order to assess the impact of mismodeling of relevant parameters, such as the rate of gluon splitting to \bbbar and the b-tagging SFs.
 The appropriate ranges for these parameters are determined based on measurements in dedicated control samples and then constrained by a simultaneous fit across all bins of \Njets and \MJ in a correlated manner.
 A detailed discussion of these variations and their measurements is given in Chapter~\ref{chap:systematics}.
@@ -26,9 +26,9 @@ The \ttbar and QCD normalizations are allowed to float in each \Njets, \MJ bin b
 The largest constraint on the \ttbar normalization in each bin is the background-dominated $\Nb \leq 2$ bins, while the QCD normalization in each bin is mostly constrained by corresponding bins in a similar 0-lepton kinematic region selected by requiring $\Nleps = 0$, $\HT > 1500~\GeV$, $\MJ > 500~\GeV$, $\Njets \geq 6$, and $\Nb \geq 1$.
 The higher \HT requirement compared to the analysis's baseline selection is imposed in order to account for the extra energy in an event carried by the lepton in the $\Nleps = 1$ selection, while the higher \Njets selection is imposed in order to account for differences in the \Njets distribution between the $\Nleps = 1$ and $\Nleps = 0$ samples.
 This control sample follows the same kinematic binning as the $\Nleps = 1$ regions, except that the \Nb distribution in each bin is integrated in \Nb for $\Nb \geq 1$ and each bin's \Njets requirement is increased by two.
-A diagram representing the binning of the $\Nleps = 0$ control sample is shown in Figure~\ref{fig:nlep0_regions}.
+A diagram representing the binning of the $\Nleps = 0$ control sample is shown in Figure~\ref{fig:nlep0_regions}, where the black arrows indicate the pairing structure between lepton bins and is representative for all \MJ bins.
 The QCD contribution in a particular $\Nleps = 1$ bin is then constrained by the corresponding $\Nleps = 0$ bin.
-To avoid biasing the normalization measurement, the small contribution of \ttbar background to the $\Nleps = 0$ control regions is included using the normalization from the corresponding $\Nleps = 1$ bins, while contributions from other processes are taken from simulation.
+To avoid biasing the normalization measurement, the small contribution of \ttbar background to the $\Nleps = 0$ control regions is simultaneously included using the normalization from the corresponding $\Nleps = 1$ bins, while contributions from other processes are taken from simulation.
 
 \begin{figure}[tbp!]
 \centering
@@ -50,7 +50,7 @@ The QCD, \Wjets, and Other contributions, however, are largely constrained by ot
 
 In order to avoid this instability, the normalizations of \ttbar and QCD are (independently) connected by log-normal constraints between adjacent \MJ bins.
 By correlating the normalizations across \MJ bins, the fit's sensitivity to large fluctuations in a single bin is greatly reduced.
-The size of these connections is motivated by measurements of the data-to-simulation ratio with $\Nb = 1$ events (in order to avoid potential signal contamination) and is particuarly chosen to be significantly larger than the uncertainty on the data-to-simulation ratios in order to avoid over-constraining the normalization parameters, while still providing some constraint against unphysical fits.
+The size of these connections is motivated by measurements of the data-to-simulation ratio with $\Nb = 1$ events (in order to avoid potential signal contamination and unblinding the data) and is particuarly chosen to be significantly larger than the uncertainty on the data-to-simulation ratios in order to avoid over-constraining the normalization parameters, while still providing some constraint against unphysical fits.
 Based on these measurements, shown in Figure~\ref{fig:mj_connection}, and criteria, a connection size between adjacent bins of [50\%-200\%] is chosen.
 
 Figure~\ref{fig:mj_connection_exps} (right) shows the results of the same 1000 psuedodata experiments but now with this constraint across \MJ bins applied.
@@ -60,7 +60,7 @@ The resulting distribution of post-fit \ttbar yields now shows no evidence of un
 \centering
 \includegraphics[angle=0,width=0.48\columnwidth]{fig/mj_exps_noconn.pdf}
 \includegraphics[angle=0,width=0.48\columnwidth]{fig/mj_exps_conn.pdf}
-\caption{Distribution of post-fit yields of \ttbar in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin for 1,000 psuedodata experiments without (left) and with (right) constraints between adjacent \MJ bins.
+\caption{Distribution of post-fit yields of \ttbar in the $\Njets \geq 8$, $\MJ > 1000~\GeV$ bin for 1000 psuedodata experiments without (left) and with (right) constraints between adjacent \MJ bins.
 The dotted black line indicates the pre-fit yield.}
 \label{fig:mj_connection_exps}
 \end{figure}
@@ -81,7 +81,8 @@ The shaded region corresponds to the size of the \MJ connection in each \MJ bin.
 \label{sec:wjets_normalization}
 
 The \Wjets background is determined in the fit with one global normalization parameter and two parameters to adjust the bin-to-bin normalization of adjacent \Njets bins, since the \Njets shape may not be well-modelled by simulation.
-The amount the \Njets shape may vary is based on the data-to-simulation agreement in a kinematically similar \Zjets sample selected with $\Nleps = 2$ ($\mathrm{ee}$ or $\mu\mu$), $\HT > 1200~\GeV$, $\MJ > 500~\GeV$, $\Nb = 1$, and $80 < \mll < 100~\GeV$, where $\mll$ is the invariant mass of the two leptons.
+The amount the \Njets shape may vary is based on the data-to-simulation agreement in a kinematically similar \Zjets sample, which is selected by requiring $\Nleps = 2$ ($\mathrm{ee}$ or $\mu\mu$), $\HT > 1200~\GeV$, $\MJ > 500~\GeV$, $\Nb = 1$, and $80 < \mll < 100~\GeV$, where $\mll$ is the invariant mass of the two leptons.
+This sample is used due to the similar electroweak processes involved in \Wjets and \Zjets production, which allows for the ISR component of the \Zjets sample to be used as a probe of that of \Wjets production.
 The \Njets distribution and data/simulation yields ratio for this sample are shown in Figure~\ref{fig:njets_dy}.
 The resulting uncertainties are 17\% between $4 \leq \Njets \leq 5$ and $6 \leq \Njets \leq 7$ and 62\% between $6 \le \Njets \le 7$ and $\Njets \ge8$.
 After correcting the \Njets spectrum, the residual \MJ mismodeling is expected to be small, so no further correction is applied.
